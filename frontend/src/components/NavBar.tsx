@@ -4,15 +4,14 @@ import { navItems } from "@/constants/constants";
 import MobileSidebar from "./MobileSidebar";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Image from "next/image";
 
 export default function NavBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg">
-      <div>
-        <h1 className="text-lg md:text-2xl uppercase font-bold text-[#25406e]">
-          Loan Projector
-        </h1>
+      <div className="">
+        <Image src={"/main-logo.jpeg"} height={200} width={200} alt="logo" />
       </div>
       <div className="hidden md:block">
         <div className="flex items-center md:space-x-4 lg:space-x-8">

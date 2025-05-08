@@ -18,7 +18,7 @@ export default function HeroComponent() {
       >
         {[1, 2, 3].map((index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full aspect-[3/1]">
+            <div className="relative w-full aspect-[calc(4*3+1)/3]">
               <Image
                 src="/Hero.png"
                 fill
