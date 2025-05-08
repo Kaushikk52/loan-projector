@@ -1,3 +1,4 @@
+import { AnimatedNumberInView } from "@/components/AnimatedNumber";
 import HeroComponent from "@/components/HeroComponent";
 import LoadCardContainer from "@/components/LoanCardsContainer";
 import { ourJourneyData } from "@/constants/constants";
@@ -29,11 +30,23 @@ export default function Home() {
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-amber-600 to-amber-950">
           OUR JOURNEY SO FAR
         </h1>
-        <div className="flex items-center gap-10">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           {ourJourneyData.map((data) => (
-            <div className="flex items-center gap-2" key={data.tag}>
-              <h1 className="">{data.amount}</h1>
-              <span>{data.tag}</span>
+            <div
+              className="flex flex-col md:flex-row items-center gap-5"
+              key={data.tag}
+            >
+              <div className="flex">
+                <h1 className="text-xl">
+                  <AnimatedNumberInView countValue={data.amount} />
+                </h1>
+                <span className="text-4xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-7xl font-bold font-nunito text-zinc-800">
+                  {data.unit}
+                </span>
+              </div>
+              <span className="font-semibold text-slate-500 font-nunito text-lg">
+                {data.tag}
+              </span>
             </div>
           ))}
         </div>

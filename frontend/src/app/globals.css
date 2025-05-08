@@ -132,3 +132,32 @@
   border: 1px solid gainsboro;
   box-sizing: border-box;
 }
+
+
+/* Optional: Add this to your global CSS or a separate CSS file */
+.loan-swiper .swiper-button-next,
+.loan-swiper .swiper-button-prev {
+  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loan-swiper .swiper-button-next:after,
+.loan-swiper .swiper-button-prev:after {
+  font-size: 18px;
+}
+
+.loan-swiper .swiper-pagination-bullet-active {
+  background-color: #333;
+}
+
+/* Add some spacing for the pagination */
+.loan-swiper {
+  padding-bottom: 40px;
+}
+

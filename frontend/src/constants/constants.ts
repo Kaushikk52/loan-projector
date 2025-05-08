@@ -22,7 +22,7 @@ export const loanCardsData=[
 ]
 
 export const ourJourneyData=[
-    {amount:"56L",tag:"Loans sanctioned"},
-    {amount:"17C+",tag:"Loan amount disbursed"},
-    {amount:"25L+",tag:"Active Loans"},
+    {amount:56,tag:"Loans sanctioned",unit:"L"},
+    {amount:17,tag:"Loan amount disbursed",unit:"Cr+"},
+    {amount:25,tag:"Active Loans",unit:"L+"},
 ]
