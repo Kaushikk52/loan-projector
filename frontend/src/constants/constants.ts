@@ -1,4 +1,3 @@
-import { BsCreditCardFill } from "react-icons/bs"
 import { FaHandHoldingUsd } from "react-icons/fa"
 import { GiAmbulance, GiFamilyHouse } from "react-icons/gi"
 import { IoMdCart } from "react-icons/io"

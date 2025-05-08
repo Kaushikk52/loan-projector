@@ -5,7 +5,6 @@ import type React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
-import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
 type LoanCardProps = {
   label: string;
