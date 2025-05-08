@@ -126,14 +126,6 @@
   }
 }
 
-.loan-card-hover:hover {
-  box-shadow: 0 0 10px 6px rgba(23, 64, 37, 0.18);
-  transition: box-shadow 0.3s ease;
-  border: 1px solid gainsboro;
-  box-sizing: border-box;
-}
-
-
 /* Optional: Add this to your global CSS or a separate CSS file */
 .loan-swiper .swiper-button-next,
 .loan-swiper .swiper-button-prev {
@@ -161,3 +153,16 @@
   padding-bottom: 40px;
 }
 
+/* Center the slides */
+.loan-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make sure the cards themselves are centered */
+.loan-swiper .swiper-slide > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

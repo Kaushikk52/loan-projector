@@ -7,7 +7,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export default function LoanCardContainer() {
   return (
-    <div className="w-full max-w-md md:max-w-5xl xl:max-w-7xl  px-4">
+    <div className="w-full max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={2}
@@ -16,23 +16,39 @@ export default function LoanCardContainer() {
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 8,
+          },
           425: {
-            slidesPerView: 2,
-            spaceBetween: 2,
+            slidesPerView: 1,
+            spaceBetween: 8,
+          },
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 8,
+          },
+          800: {
+            slidesPerView: 4,
+            spaceBetween: 8,
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 2,
+            spaceBetween: 8,
+          },
+          1224: {
+            slidesPerView: 5,
+            spaceBetween: 8,
           },
           1440: {
             slidesPerView: 6,
-            spaceBetween: 2,
+            spaceBetween: 8,
           },
         }}
-        className="loan-swiper items-center"
+        className="loan-swiper px-4 items-center justify-center"
       >
         {loanCardsData.map((card) => (
-          <SwiperSlide key={card.label}>
+          <SwiperSlide key={card.label} className="flex justify-center">
             <div className="py-4">
               <LoanCard
                 label={card.label}
