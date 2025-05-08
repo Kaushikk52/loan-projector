@@ -1,9 +1,9 @@
 "use client";
 
 import { loanCardsData } from "@/constants/constants";
-import LoanCard from "./LoanCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import LoanCard from "./LoanCard";
 
 export default function LoanCardContainer() {
   return (
@@ -13,6 +13,7 @@ export default function LoanCardContainer() {
         spaceBetween={2}
         slidesPerView={6}
         navigation
+        loop={true}
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         breakpoints={{
@@ -51,6 +52,7 @@ export default function LoanCardContainer() {
           <SwiperSlide key={card.label} className="flex justify-center">
             <div className="py-4">
               <LoanCard
+                description={card.description}
                 label={card.label}
                 theme={card.theme}
                 icon={card.icon}

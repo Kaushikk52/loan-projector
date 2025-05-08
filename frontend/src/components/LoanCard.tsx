@@ -1,19 +1,84 @@
+"use client";
+
+import type React from "react";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { IconType } from "react-icons";
+import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
 type LoanCardProps = {
   label: string;
   theme: string;
   icon: IconType;
+  description: string;
 };
 
-export default function LoanCard({ label, theme, icon: Icon }: LoanCardProps) {
+const LoanCard = ({ label, theme, icon: Icon, description }: LoanCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div
-      className={`flex flex-col items-center justify-center gap-5 py-10 w-[200px] rounded loan-card-hover transition duration-300 cursor-pointer border border-transparent box-border`}
+    <motion.div
+      className="bg-[#f5f5fa] rounded-3xl p-3 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-64 pt-10"
       style={{ backgroundColor: theme }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
-      <Icon size={50} color="#515151" />
-      <h1 className="text-sm text-slate-700 font-black font-nunito">{label}</h1>
-    </div>
+      {/* Icon */}
+      <motion.div
+        className="w-60 h-16 rounded-full flex items-center justify-center"
+        initial={{ y: 0 }}
+        animate={{
+          y: isHovered ? -100 : 0,
+          scale: isHovered ? 1.2 : 1,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 20,
+        }}
+      >
+        <Icon size={50} />
+      </motion.div>
+
+      {/* Title */}
+      <motion.h3
+        className="text-gray-800 text-center font-bold text-xl absolute w-full px-6"
+        initial={{ y: 80 }}
+        animate={{
+          y: isHovered ? 10 : 80,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+          delay: isHovered ? 0.1 : 0,
+        }}
+      >
+        {label}
+      </motion.h3>
+
+      {/* Description */}
+      {description && (
+        <motion.p
+          className="text-gray-600 text-sm absolute w-full left-0 px-8"
+          initial={{ y: 240, opacity: 0 }}
+          animate={{
+            y: isHovered ? 80 : 240,
+            opacity: isHovered ? 1 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: isHovered ? 0.2 : 0,
+          }}
+        >
+          {description}
+        </motion.p>
+      )}
+    </motion.div>
   );
-}
+};
+
+export default LoanCard;
