@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Loan Projector - Home",
@@ -19,6 +20,7 @@ export default function RootLayout({
           <div>
             <NavBar />
             {children}
+            <Footer />
           </div>
         </body>
       </html>
