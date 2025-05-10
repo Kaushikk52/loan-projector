@@ -15,9 +15,11 @@ export default function NavBar() {
 
   return (
     <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg relative z-50">
-      <div>
-        <Image src={"/main-logo.png"} height={100} width={100} alt="logo" />
-      </div>
+      <Link href={"/"}>
+        <div>
+          <Image src={"/main-logo.png"} height={100} width={100} alt="logo" />
+        </div>
+      </Link>
       <div className="hidden md:block">
         <div className="flex items-center md:space-x-4 lg:space-x-8">
           {navItems.map((item) => (

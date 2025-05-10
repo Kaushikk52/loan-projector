@@ -1,4 +1,5 @@
 import { loanCardsData } from "@/constants/constants";
+import Link from "next/link";
 
 type ServicesDropDownProps = {
   isMobileSidebar?: boolean;
@@ -17,12 +18,11 @@ const ServicesDropDown = ({
       }`}
     >
       {loanCardsData.map((loan) => (
-        <div
-          key={loan.label}
-          className="py-2 px-4 text-sm font-medium text-gray-800 hover:bg-gray-100 cursor-pointer"
-        >
-          {loan.label}
-        </div>
+        <Link href={loan.path} key={loan.label}>
+          <div className="py-2 px-4 text-sm font-medium text-gray-800 hover:bg-gray-100 cursor-pointer">
+            {loan.label}
+          </div>
+        </Link>
       ))}
     </div>
   );

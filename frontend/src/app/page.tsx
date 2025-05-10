@@ -36,7 +36,7 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto px-4 flex flex-col gap-52">
           {/* OUR JOURNEY */}
           <div className="flex flex-col gap-10 items-center">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-amber-600 to-amber-950">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-orange-100 via-amber-600 to-amber-950">
               OUR JOURNEY SO FAR
             </h1>
 
@@ -97,6 +97,9 @@ export default function Home() {
 
       {/* Image Slider */}
       <div className="mt-32">
+        <div className="text-xl w-fit sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-amber-600 to-amber-950 mx-auto">
+          <h1>Our partners</h1>
+        </div>
         <ImageSlider />
       </div>
     </div>
