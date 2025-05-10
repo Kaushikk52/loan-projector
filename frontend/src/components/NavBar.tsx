@@ -5,21 +5,44 @@ import MobileSidebar from "./MobileSidebar";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
+import ServicesDropDown from "./ServicesDropDown";
 
 export default function NavBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showDropDown, setShowDropdown] = useState(false);
+
   return (
-    <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg">
-      <div className="">
-        <Image src={"/main-logo.jpeg"} height={200} width={200} alt="logo" />
+    <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg relative z-50">
+      <div>
+        <Image src={"/main-logo.png"} height={100} width={100} alt="logo" />
       </div>
       <div className="hidden md:block">
         <div className="flex items-center md:space-x-4 lg:space-x-8">
           {navItems.map((item) => (
-            <div key={item.label}>
-              <h1 className="cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200">
+            <div
+              key={item.label}
+              className="relative"
+              onMouseEnter={() => item.dropMenu && setShowDropdown(true)}
+              onMouseLeave={() => item.dropMenu && setShowDropdown(false)}
+            >
+              <h1 className="cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200 flex items-center gap-2">
                 {item.label}
+                {item.dropMenu && (
+                  <ChevronDown
+                    size={16}
+                    className={`${
+                      showDropDown && "rotate-180"
+                    } transition-transform duration-200`}
+                  />
+                )}
               </h1>
+
+              {item.label === "Services" && showDropDown && (
+                <div className="absolute top-full left-0">
+                  <ServicesDropDown setShowDropdown={setShowDropdown} />
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -28,7 +51,6 @@ export default function NavBar() {
         <button>
           <GiHamburgerMenu size={16} onClick={() => setIsSidebarOpen(true)} />
         </button>
-
         <MobileSidebar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}

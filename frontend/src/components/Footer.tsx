@@ -10,12 +10,13 @@ import { FiClock, FiMail, FiPhone } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <footer className="pt-10 mt-10 border-2 bg-slate-100">
-      <div className="max-w-7xl mx-auto grid grid-cols-12 gap-6 items-center">
-        <div className="col-span-9 grid grid-cols-3 gap-6 border-r-2 pr-10 justify-items-center">
-          <div className="pl-4">
-            <Image src="/footer-logo.png" height={200} width={200} alt="logo" />
-            <p className="font-nunito text-md font-semibold mt-4 text-balance text-slate-500 ">
+    <footer className="pt-10 mt-10 border-t-2 bg-slate-100">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-12 gap-6 items-start px-4 xl:px-0">
+        {/* Left Section */}
+        <div className="xl:col-span-9 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:border-r-2 xl:pr-10">
+          <div>
+            <Image src="/main-logo.png" height={200} width={200} alt="logo" />
+            <p className="font-nunito text-md font-semibold mt-4 text-slate-500">
               We are a new-age Fin-Tech platform which aims to foster financial
               inclusion by leveraging technology to support borrowers with
               hassle-free loans.
@@ -28,7 +29,7 @@ export default function Footer() {
             {navItems.slice(0, 5).map((item, idx) => (
               <p
                 key={idx}
-                className="font-nunito text-md font-semibold mt-3 text-balance text-slate-500"
+                className="font-nunito text-md font-semibold mt-3 text-slate-500"
               >
                 {item.label}
               </p>
@@ -41,7 +42,7 @@ export default function Footer() {
             {loanCardsData.slice(0, 5).map((service, idx) => (
               <p
                 key={idx}
-                className="font-nunito text-md font-semibold mt-3 text-balance text-slate-500"
+                className="font-nunito text-md font-semibold mt-3 text-slate-500"
               >
                 {service.label}
               </p>
@@ -50,7 +51,7 @@ export default function Footer() {
         </div>
 
         {/* Right Section */}
-        <div className="col-span-3 flex flex-col items-center">
+        <div className="xl:col-span-3 flex flex-col items-center xl:items-start text-center xl:text-left">
           <h2 className="font-nunito text-lg font-semibold mb-4">
             Connect With Us
           </h2>
@@ -63,13 +64,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-white bg-[#1d1d26] w-full mt-5 p-10  gap-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-6 items-center">
-          {/* Left Section: Our Address */}
-          <div className="col-span-6 space-y-4">
-            <h1 className="text-lg font-semibold text-white">Our Address</h1>
-
-            <div className="grid grid-cols-2 space-y-4 text-slate-300">
+      {/* Address Section */}
+      <div className="bg-[#1d1d26] w-full mt-10 p-6 md:p-10 text-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-12 gap-6 items-start px-4 xl:px-0">
+          <div className="xl:col-span-6 space-y-4">
+            <h1 className="text-lg font-semibold">Our Address</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-300">
               {/* Corporate Office */}
               <div>
                 <h2 className="font-bold text-sm">CORPORATE OFFICE</h2>
@@ -91,15 +91,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Section: Connect With Us */}
-          <div className="col-span-6 space-y-4">
-            <h1 className="text-lg font-semibold text-white">
-              Connect With Us
-            </h1>
-
-            <div className="grid grid-cols-2 space-y-4">
-              {/* Retail Customer Care */}
-              <div className="text-slate-300">
+          {/* Contact Section */}
+          <div className="xl:col-span-6 space-y-4">
+            <h1 className="text-lg font-semibold">Connect With Us</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-300">
+              {/* Retail Customer */}
+              <div>
                 <h2 className="font-bold text-sm">RETAIL CUSTOMER CARE HELP</h2>
                 <p className="text-xs mt-1 flex flex-col gap-1">
                   <span className="flex items-center gap-2">
@@ -114,8 +111,8 @@ export default function Footer() {
                 </p>
               </div>
 
-              {/* Corporate Customer Care */}
-              <div className="text-slate-300">
+              {/* Corporate Customer */}
+              <div>
                 <h2 className="font-bold text-sm">
                   CORPORATE CUSTOMER CARE HELP
                 </h2>
@@ -136,15 +133,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-white bg-[#2D363D] p-5">
-        <div className="flex justify-between max-w-7xl mx-auto">
-          <div className="flex justify-start">
+      {/* Bottom Bar */}
+      <div className="bg-[#2D363D] p-5 text-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4 xl:px-0">
+          <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 text-sm">
             <span>Privacy Policy</span>
-            <span>Terms And Conditions</span>
+            <span className="border-l border-r px-2">Terms And Conditions</span>
             <span>Disclaimer</span>
           </div>
-          <div className="flex self-end">
-            <p>Copyright © 2025 IIFL Finance Limited. All rights Reserved.</p>
+          <div className="text-xs text-center md:text-right">
+            Copyright © 2025 Loan Projector. All rights Reserved.
           </div>
         </div>
       </div>

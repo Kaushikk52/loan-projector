@@ -1,7 +1,11 @@
-import { X } from "lucide-react";
+"use client";
+
+import { ChevronDown, X } from "lucide-react";
 import clsx from "clsx";
 import Link from "next/link";
 import { navItems } from "@/constants/constants";
+import { useState } from "react";
+import ServicesDropDown from "./ServicesDropDown";
 
 type SidebarProps = {
   isSidebarOpen: boolean;
@@ -12,6 +16,8 @@ export default function MobileSidebar({
   isSidebarOpen,
   setIsSidebarOpen,
 }: SidebarProps) {
+  const [showServiceDropdown, setShowServiceDropdown] = useState(false);
+
   return (
     <>
       {/* BACKDROP */}
@@ -26,30 +32,58 @@ export default function MobileSidebar({
       {/* SIDEBAR */}
       <div
         className={clsx(
-          "fixed top-0 right-0 h-full w-[50%] bg-white shadow-lg transition-transform duration-600 z-50 flex flex-col",
+          "fixed top-0 right-0 h-full w-[75%] bg-white shadow-lg transition-transform duration-600 z-50 flex flex-col",
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         )}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <div className="flex justify-end items-center p-4">
           <button onClick={() => setIsSidebarOpen(false)}>
             <X size={24} />
           </button>
         </div>
 
-        {/* Sidebar Content */}
         <div className="flex flex-col flex-1 px-4">
           <div className="flex flex-col gap-8">
             {navItems.map((tag) => (
-              <Link
-                onClick={() => setIsSidebarOpen(false)}
-                href={tag.path}
-                key={tag.label}
-                className="text-sm uppercase font-medium text-slate-700 hover:text-slate-800 hover:font-semibold cursor-pointer"
-              >
-                {tag.label}
-              </Link>
+              <div key={tag.label} className="flex flex-col">
+                {tag.dropMenu ? (
+                  <>
+                    <div
+                      onClick={() =>
+                        setShowServiceDropdown(!showServiceDropdown)
+                      }
+                      className="text-sm uppercase font-medium text-slate-700 hover:text-slate-800 hover:font-semibold cursor-pointer flex items-center gap-2"
+                    >
+                      {tag.label}
+                      {tag.dropMenu && (
+                        <ChevronDown
+                          size={16}
+                          className={`${
+                            showServiceDropdown && "rotate-180"
+                          } transition-transform duration-200`}
+                        />
+                      )}
+                    </div>
+                    {showServiceDropdown && (
+                      <div className="ml-4 mt-2">
+                        <ServicesDropDown
+                          setShowDropdown={setShowServiceDropdown}
+                          isMobileSidebar={true}
+                        />
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    onClick={() => setIsSidebarOpen(false)}
+                    href={tag.path}
+                    className="text-sm uppercase font-medium text-slate-700 hover:text-slate-800 hover:font-semibold cursor-pointer"
+                  >
+                    {tag.label}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
         </div>

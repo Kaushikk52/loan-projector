@@ -7,7 +7,7 @@ import { MdCardTravel } from "react-icons/md"
 export const navItems =[
     {label:"Home",path:"/"},
     {label:"About Us",path:"/about"},
-    {label:"Services",path:"/"},
+    {label:"Services",path:"/",dropMenu:true},
     {label:"Repay Loan",path:"/repay"},
     {label:"Contact Us",path:"/contact"},
 ]
@@ -59,16 +59,14 @@ export const ourJourneyData=[
 ]
 
 export const homeSliderData = [
-  "/fibe-img.jpg",
   "/hdfc-img.png",
   "/icici-img.avif",
   "/incred-img.jpeg",
   "/indusind-img.png",
   "/kotak-img.jpg",
-  "/kredit-bee-img.png",
-  "/mpokket-img.webp",
   "/tata-img.png",
-  "/zype-img.png",
   "/pnb-housing-img.webp",
-  "dhfl_logo-img.png"
+  "dhfl_logo-img.png",
+  "adani-capital-img.jpeg",
+  "yes-bank-img.jpeg"
 ];
