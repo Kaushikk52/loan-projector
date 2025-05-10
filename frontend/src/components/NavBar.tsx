@@ -39,7 +39,7 @@ export default function NavBar() {
               </h1>
 
               {item.label === "Services" && showDropDown && (
-                <div className="absolute top-full left-0">
+                <div className="absolute top-full left-0 mt-2">
                   <ServicesDropDown setShowDropdown={setShowDropdown} />
                 </div>
               )}

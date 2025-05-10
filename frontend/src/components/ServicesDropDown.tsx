@@ -12,7 +12,7 @@ const ServicesDropDown = ({
   return (
     <div
       onMouseEnter={() => setShowDropdown?.(true)}
-      className={`w-52 bg-white p-2   ${
+      className={`w-52 bg-white   ${
         isMobileSidebar ? "" : "shadow-lg border z-50 rounded-md"
       }`}
     >

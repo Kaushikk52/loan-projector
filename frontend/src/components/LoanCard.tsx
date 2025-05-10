@@ -19,6 +19,7 @@ const LoanCard = ({ label, theme, icon: Icon, description }: LoanCardProps) => {
   return (
     <motion.div
       className="bg-slate-50 rounded-3xl p-3 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-64 pt-10"
+      onClick={() => setIsHovered(!isHovered)}
       // style={{ backgroundColor: theme }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
