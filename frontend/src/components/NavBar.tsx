@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import ServicesDropDown from "./ServicesDropDown";
+import Link from "next/link";
 
 export default function NavBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -26,17 +27,19 @@ export default function NavBar() {
               onMouseEnter={() => item.dropMenu && setShowDropdown(true)}
               onMouseLeave={() => item.dropMenu && setShowDropdown(false)}
             >
-              <h1 className="cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200 flex items-center gap-2">
-                {item.label}
-                {item.dropMenu && (
-                  <ChevronDown
-                    size={16}
-                    className={`${
-                      showDropDown && "rotate-180"
-                    } transition-transform duration-200`}
-                  />
-                )}
-              </h1>
+              <Link href={item.path}>
+                <h1 className="cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200 flex items-center gap-2">
+                  {item.label}
+                  {item.dropMenu && (
+                    <ChevronDown
+                      size={16}
+                      className={`${
+                        showDropDown && "rotate-180"
+                      } transition-transform duration-200`}
+                    />
+                  )}
+                </h1>
+              </Link>
 
               {item.label === "Services" && showDropDown && (
                 <div className="absolute top-full left-0 mt-2">

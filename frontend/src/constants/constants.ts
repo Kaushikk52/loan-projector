@@ -1,8 +1,10 @@
-import { FaHandHoldingUsd } from "react-icons/fa"
+import { FaHandHoldingUsd, FaUserTie } from "react-icons/fa"
 import { GiAmbulance, GiFamilyHouse } from "react-icons/gi"
 import { IoMdCart } from "react-icons/io"
-import { IoCarSportSharp } from "react-icons/io5"
+import { IoCarSportSharp, IoDiamond } from "react-icons/io5"
 import { MdCardTravel } from "react-icons/md"
+import { BsShieldFillCheck } from "react-icons/bs";
+
 
 export const navItems =[
     {label:"Home",path:"/"},
@@ -69,4 +71,10 @@ export const homeSliderData = [
   "dhfl_logo-img.png",
   "adani-capital-img.jpeg",
   "yes-bank-img.jpeg"
+];
+
+export const aboutUsImpactData = [
+  { icon: BsShieldFillCheck, tag: "Secure", desc: "We prioritize your safety and data security, ensuring that all your transactions and personal information are protected with the latest encryption technology." },
+  { icon: IoDiamond, tag: "Proficient",border:true, desc: "Our team is highly skilled and proficient in delivering high-quality solutions that exceed expectations, making sure your needs are met with precision." },
+  { icon: FaUserTie, tag: "Professional", desc: "We maintain a high standard of professionalism in everything we do, ensuring timely delivery, clear communication, and exceptional customer service." },
 ];
