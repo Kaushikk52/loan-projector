@@ -1,5 +1,5 @@
-import { MdDone, MdSend } from "react-icons/md";
-import { FaMoneyCheckAlt, FaHandsHelping } from "react-icons/fa";
+import { MdDone } from "react-icons/md";
+import { FaMoneyCheckAlt } from "react-icons/fa";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import { GiTakeMyMoney } from "react-icons/gi";
 import Image from "next/image"; // Only if using Next.js
