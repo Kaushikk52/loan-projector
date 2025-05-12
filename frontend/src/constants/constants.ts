@@ -16,7 +16,7 @@ import { GrDocument } from "react-icons/gr";
 export const navItems = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about" },
-  { label: "Services", path: "/", dropMenu: true },
+  { label: "Services", path: "", dropMenu: true },
   { label: "Repay Loan", path: "/repay" },
   { label: "Contact Us", path: "/contact" },
 ];
