@@ -76,7 +76,7 @@ const Feature = ({
   <div className="flex items-start gap-4 p-4 bg-white shadow rounded-xl">
     <div>{icon}</div>
     <div>
-      <h3 className="text-lg font-bold text-blue-800">{title}</h3>
+      <h3 className="text-lg font-bold font-nunito text-blue-800">{title}</h3>
       <p className="text-sm text-slate-600">{desc}</p>
     </div>
   </div>
