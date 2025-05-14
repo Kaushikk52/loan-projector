@@ -148,3 +148,9 @@ export const heroImageData = [
   "/hero-img-2.jpg",
   "/hero-img-3.jpeg",
 ];
+
+export const footerLinksLabel = [
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+  { name: "Conatct Us", path: "/contact" },
+];
