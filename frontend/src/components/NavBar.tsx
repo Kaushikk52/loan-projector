@@ -9,12 +9,20 @@ import { ChevronDown } from "lucide-react";
 import ServicesDropDown from "./ServicesDropDown";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import RepayDialog from "./RepayDialog";
 
 export default function NavBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showDropDown, setShowDropdown] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const pathname = usePathname();
+
+  const handleDialogeOpen = (isDialog: boolean) => {
+    if (isDialog) {
+      setOpen(true);
+    }
+  };
 
   return (
     <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg relative z-50">
@@ -34,6 +42,11 @@ export default function NavBar() {
             >
               <Link href={item.path}>
                 <h1
+                  onClick={() =>
+                    handleDialogeOpen(
+                      item.openDialoge ? item.openDialoge : false
+                    )
+                  }
                   className={`cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200 flex items-center gap-2 ${
                     pathname === item.path ? "text-blue-700" : "text-[#25406e]"
                   }`}
@@ -58,7 +71,15 @@ export default function NavBar() {
             </div>
           ))}
           <div className="bg-blue-500 px-4 py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg">
-            <h1 className="text-md font-nunito">Apply Now</h1>
+            <Link
+              href={
+                "https://docs.google.com/forms/d/e/1FAIpQLSfmhMb7mOYMC3MCuHGfOfFHxqMj7KIyCQlpkhvj-1kodZy4Ig/viewform"
+              }
+              target="_blank"
+            >
+              <h1 className="text-md font-nunito">Apply Now</h1>
+            </Link>
+            <RepayDialog open={open} setOpen={setOpen} />
           </div>
         </div>
       </div>

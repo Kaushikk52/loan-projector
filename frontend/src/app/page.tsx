@@ -84,21 +84,23 @@ export default function Home() {
               <p className="text-xs md:text-sm lg:text-md text-start text-slate-500 md:font-semibold font-nunito max-w-xl">
                 You can easily repay your{" "}
                 <strong>loan for any financial requirement</strong> through
-                flexible EMI options with Loan Projector. Enjoy seamless online
-                repayments that offer convenience and control over your
-                finances. We take pride in delivering reliable services, which
-                has helped us become a trusted name in the fintech space. At
-                Loan Projector, our mission is to provide fast, accessible
-                financial assistance through a secure and user-friendly online
-                platform.
+                flexible EMI options with <strong>Loan Projector</strong>. Enjoy
+                seamless online repayments that offer convenience and control
+                over your finances. We take pride in delivering reliable
+                services, which has helped us become a trusted name in the
+                fintech space. At
+                <strong>Loan Projector</strong>, our mission is to provide fast,
+                accessible financial assistance through a secure and
+                user-friendly online platform.
               </p>
               <p className="text-xs md:text-sm lg:text-md text-start text-slate-500 md:font-semibold font-nunito max-w-xl">
                 A short-term loan is an easy solution for a financial crisis.
                 Since the amount borrowed is usually small, it can be repaid
-                through manageable EMIs. Loan Projector makes it easier to apply
-                for short-term loans online from anywhere—be it at home, at
-                work, or on the go. Learn more about the benefits and features
-                of short-term loans through the Loan Projector platform.
+                through manageable EMIs. <strong>Loan Projector</strong> makes
+                it easier to apply for short-term loans online from anywhere—be
+                it at home, at work, or on the go. Learn more about the benefits
+                and features of short-term loans through the{" "}
+                <strong>Loan Projector</strong> platform.
               </p>
             </div>
           </div>

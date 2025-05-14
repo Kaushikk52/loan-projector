@@ -17,14 +17,13 @@ interface RepayDialogProps {
 }
 
 export default function RepayDialog({ open, setOpen }: RepayDialogProps) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  // const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Repay Info:", { name, email });
-    setName("");
-    setEmail("");
+    // setName("");
+    setNumber("");
     setOpen(false);
   };
 
@@ -35,7 +34,7 @@ export default function RepayDialog({ open, setOpen }: RepayDialogProps) {
           <DialogTitle>Repay Loan</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
+          {/* <div>
             <Label htmlFor="name">Name</Label>
             <Input
               id="name"
@@ -43,18 +42,18 @@ export default function RepayDialog({ open, setOpen }: RepayDialogProps) {
               onChange={(e) => setName(e.target.value)}
               required
             />
-          </div>
-          <div>
-            <Label htmlFor="email">Email</Label>
+          </div> */}
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="number">Register mobile number</Label>
             <Input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              id="number"
+              type="tel"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
               required
             />
           </div>
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full bg-blue-600">
             Submit
           </Button>
         </form>

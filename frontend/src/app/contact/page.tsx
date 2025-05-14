@@ -42,7 +42,7 @@ export default function ContactUs() {
           />
         </div>
       </div>
-      <div className="flex gap-20">
+      <div className="flex flex-col lg:flex-row gap-20">
         <div className="">
           <Image src={"/map-img.png"} alt="map" height={400} width={600} />
         </div>

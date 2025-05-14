@@ -18,7 +18,7 @@ type LoanCalculatorProps = {
 
 export default function LoanCalculator(props: LoanCalculatorProps) {
   const [loanAmount, setLoanAmount] = useState(86000);
-  const [interestRate, setInterestRate] = useState(19);
+  const [interestRate, setInterestRate] = useState(1);
   const [tenure, setTenure] = useState(12);
   const [emi, setEmi] = useState(0);
   const [interestPayable, setInterestPayable] = useState(0);
@@ -227,7 +227,7 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
           </div>
         </div>
 
-        <div className="bg-gray-100 rounded-md p-4 flex gap-4 text-center">
+        <div className="bg-gray-100 rounded-md p-4 flex items-center justify-evenly gap-4 text-center">
           <div>
             <p className="text-sm text-gray-600">
               {isShortTerm ? "Daily Payment" : "Monthly EMI"}
