@@ -8,10 +8,13 @@ import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import ServicesDropDown from "./ServicesDropDown";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showDropDown, setShowDropdown] = useState(false);
+
+  const pathname = usePathname();
 
   return (
     <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg relative z-50">
@@ -30,7 +33,11 @@ export default function NavBar() {
               onMouseLeave={() => item.dropMenu && setShowDropdown(false)}
             >
               <Link href={item.path}>
-                <h1 className="cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200 flex items-center gap-2">
+                <h1
+                  className={`cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200 flex items-center gap-2 ${
+                    pathname === item.path ? "text-blue-700" : "text-[#25406e]"
+                  }`}
+                >
                   {item.label}
                   {item.dropMenu && (
                     <ChevronDown
@@ -44,7 +51,7 @@ export default function NavBar() {
               </Link>
 
               {item.label === "Services" && showDropDown && (
-                <div className="absolute top-full left-0 mt-2">
+                <div className="absolute top-full left-0 mt-1">
                   <ServicesDropDown setShowDropdown={setShowDropdown} />
                 </div>
               )}

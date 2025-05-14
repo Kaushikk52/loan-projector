@@ -14,7 +14,7 @@ const WhyChooseUs = ({ title, imgSrc }: WhyChooseUsProps) => {
   console.log(imgSrc);
 
   return (
-    <div className="min-h-fit bg-gradient-to-b from-[#ebf2f7] to-[#cbe8fc] p-8 w-full py-16">
+    <div className="min-h-fit bg-gray-50 p-8 w-full py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Centered Heading */}
         <h2 className="text-center text-3xl lg:text-4xl font-bold text-blue-800 font-nunito mb-8">
@@ -55,7 +55,7 @@ const WhyChooseUs = ({ title, imgSrc }: WhyChooseUsProps) => {
               alt="Loan consultation"
               height={1000}
               width={1000}
-              className="rounded-3xl shadow-xl w-full"
+              className="rounded-3xl shadow-sm w-full"
             />
           </div>
         </div>

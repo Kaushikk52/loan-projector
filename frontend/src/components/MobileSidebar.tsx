@@ -4,8 +4,9 @@ import { ChevronDown, X } from "lucide-react";
 import clsx from "clsx";
 import Link from "next/link";
 import { navItems } from "@/constants/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ServicesDropDown from "./ServicesDropDown";
+import { usePathname } from "next/navigation";
 
 type SidebarProps = {
   isSidebarOpen: boolean;
@@ -17,6 +18,12 @@ export default function MobileSidebar({
   setIsSidebarOpen,
 }: SidebarProps) {
   const [showServiceDropdown, setShowServiceDropdown] = useState(false);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    console.log(pathname, "path");
+  }, []);
 
   return (
     <>
@@ -70,6 +77,7 @@ export default function MobileSidebar({
                         <ServicesDropDown
                           setShowDropdown={setShowServiceDropdown}
                           isMobileSidebar={true}
+                          setIsSidebarOpen={setIsSidebarOpen}
                         />
                       </div>
                     )}
@@ -78,7 +86,9 @@ export default function MobileSidebar({
                   <Link
                     onClick={() => setIsSidebarOpen(false)}
                     href={tag.path}
-                    className="text-sm uppercase font-medium text-slate-700 hover:text-slate-800 hover:font-semibold cursor-pointer"
+                    className={`text-sm uppercase font-medium hover:font-semibold cursor-pointer ${
+                      pathname === tag.path ? "text-blue-600" : "text-gray-600"
+                    }`}
                   >
                     {tag.label}
                   </Link>
