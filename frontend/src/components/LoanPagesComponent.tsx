@@ -6,17 +6,20 @@ import { useState } from "react";
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import WhyChooseUs from "./WhyChooseUs";
+import LoanCalculator from "./loan-calculator";
 
 type LoanPagesComponentProps = {
   title: string;
   desc: string;
   imgSrc: string;
+  isHomeLoan?: boolean;
 };
 
 export default function LoanPagesComponent({
   title,
   desc,
   imgSrc,
+  isHomeLoan,
 }: LoanPagesComponentProps) {
   console.log(imgSrc, "image");
 
@@ -70,7 +73,7 @@ export default function LoanPagesComponent({
           </div>
         </div>
       </div>
-      <WhyChooseUs title={title} imgSrc={imgSrc} />
+      <WhyChooseUs title={title} imgSrc={imgSrc} isHomeLoan={isHomeLoan} />
       <div className="flex flex-col gap-5 w-full px-2 max-w-6xl mx-auto">
         <div
           className={`w-full border border-gray-200 px-4 md:px-5 py-5 transition-all duration-300 ease-in-out  ${

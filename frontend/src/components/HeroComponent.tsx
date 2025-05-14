@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import { heroImageData } from "@/constants/constants";
 export default function HeroComponent() {
   return (
     <div className="w-full">
@@ -16,14 +16,14 @@ export default function HeroComponent() {
         loop={true}
         className="w-full"
       >
-        {[1, 2, 3].map((index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full aspect-[calc(4*3+1)/4]">
+        {heroImageData.map((src) => (
+          <SwiperSlide key={src}>
+            <div className="relative w-full aspect-[3/1]">
               <Image
-                src="/Hero.png"
+                src={src}
                 fill
-                alt={`hero-image-${index}`}
-                className="object-cover object-center"
+                alt={`hero-image-1`}
+                className="object-center"
               />
             </div>
           </SwiperSlide>

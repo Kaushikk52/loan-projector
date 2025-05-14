@@ -4,7 +4,7 @@ import { FiClock, FiMail, FiPhone } from "react-icons/fi";
 
 export default function ContactUs() {
   return (
-    <div className="flex items-center justify-center bg-white px-6 py-12 max-w-6xl mx-auto">
+    <div className="flex flex-col items-center justify-center bg-white px-6 py-12 max-w-6xl mx-auto gap-10">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col gap-10">
           <h1 className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-nunito font-medium text-gray-900">
@@ -21,10 +21,10 @@ export default function ContactUs() {
 
           <p className="text-sm mt-1 flex flex-col gap-5">
             <span className="flex items-center gap-2">
-              <FiPhone color="#004DCB" /> 1800-102-4145
+              <FiPhone color="#004DCB" /> +91 78297 12159
             </span>
             <span className="flex items-center gap-2">
-              <FiMail color="#004DCB" /> Customer.Care@HeroFinCorp.com
+              <FiMail color="#004DCB" /> info@loanprojector.com
             </span>
             <span className="flex items-center gap-2">
               <FiClock color="#004DCB" /> 9:30 AM – 6:30 PM, Monday to Saturday
@@ -40,6 +40,27 @@ export default function ContactUs() {
             height={500}
             className="rounded-lg"
           />
+        </div>
+      </div>
+      <div className="flex gap-20">
+        <div className="">
+          <Image src={"/map-img.png"} alt="map" height={400} width={600} />
+        </div>
+        <div className="flex flex-col gap-10">
+          <h1 className="text-4xl font-nunito font-bold text-balance">
+            Loan projector is Now Available Across India
+          </h1>
+          <div className="grid grid-cols-2 gap-5">
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Delhi
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Mumbai
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Banglore
+            </h1>
+          </div>
         </div>
       </div>
     </div>

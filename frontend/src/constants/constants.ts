@@ -51,7 +51,7 @@ export const loanCardsData = [
     theme: "purple",
     icon: GiFamilyHouse,
     description:
-      "Get a loan for household needs or mortgage expenses that require immediate attention and convenience.",
+      "Get a loan for your dream house and mortagage for your current home.",
     path: "/home-loan",
   },
   {
@@ -141,4 +141,10 @@ export const benifitsCardData = [
     desc: "While applying for the emergency loan you don’t have to send the physical or hard copy of the documents. You need to send them in a softcopy only. Less documentation helps.",
     title: "Freedom of Application",
   },
+];
+
+export const heroImageData = [
+  "/hero-img-1.jpeg",
+  "/hero-img-2.jpg",
+  "/hero-img-3.jpeg",
 ];

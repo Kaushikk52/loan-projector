@@ -57,6 +57,9 @@ export default function NavBar() {
               )}
             </div>
           ))}
+          <div className="bg-blue-500 px-4 py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg">
+            <h1 className="text-md font-nunito">Apply Now</h1>
+          </div>
         </div>
       </div>
       <div className="block md:hidden">

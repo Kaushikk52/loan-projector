@@ -27,13 +27,12 @@ export default function Footer() {
           {/* Links */}
           <div>
             <h2 className="font-nunito text-xl font-bold mb-5">Links</h2>
-            {navItems.slice(0, 5).map((item, idx) => (
-              <p
-                key={idx}
-                className="font-nunito text-md font-semibold mt-3 text-slate-500"
-              >
-                {item.label}
-              </p>
+            {navItems.slice(0, 5).map((item) => (
+              <Link href={item.path} key={item.label}>
+                <p className="font-nunito text-md font-semibold mt-3 text-slate-500">
+                  {item.label}
+                </p>
+              </Link>
             ))}
           </div>
 
@@ -59,10 +58,10 @@ export default function Footer() {
             <h2 className="font-bold text-sm">RETAIL CUSTOMER CARE HELP</h2>
             <p className="text-sm mt-1 flex flex-col gap-1">
               <span className="flex items-center gap-2">
-                <FiPhone /> 1800-102-4145
+                <FiPhone /> +91 78297 12159
               </span>
               <span className="flex items-center gap-2">
-                <FiMail /> Customer.Care@HeroFinCorp.com
+                <FiMail /> info@loanprojector.com
               </span>
               <span className="flex items-center gap-2">
                 <FiClock /> 9:30 AM – 6:30 PM, Monday to Saturday

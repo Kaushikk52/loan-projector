@@ -4,13 +4,15 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 import { GiTakeMyMoney } from "react-icons/gi";
 import Image from "next/image"; // Only if using Next.js
 import { JSX } from "react";
+import LoanCalculator from "./loan-calculator";
 
 type WhyChooseUsProps = {
   title: string;
   imgSrc: string;
+  isHomeLoan: boolean;
 };
 
-const WhyChooseUs = ({ title, imgSrc }: WhyChooseUsProps) => {
+const WhyChooseUs = ({ title, imgSrc, isHomeLoan }: WhyChooseUsProps) => {
   console.log(imgSrc);
 
   return (
@@ -50,12 +52,13 @@ const WhyChooseUs = ({ title, imgSrc }: WhyChooseUsProps) => {
 
           {/* Right: Image */}
           <div className="flex-1 max-w-lg">
-            <Image
-              src={imgSrc}
-              alt="Loan consultation"
-              height={1000}
-              width={1000}
-              className="rounded-3xl shadow-sm w-full"
+            <LoanCalculator
+              minLoanAmount={100000}
+              maxLoanAmount={10000000}
+              minInterestRate={isHomeLoan ? 6 : 10.35}
+              maxInterestRate={isHomeLoan ? 10 : 35}
+              minTenure={1}
+              maxTenure={isHomeLoan ? 25 : 7}
             />
           </div>
         </div>
