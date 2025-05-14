@@ -1,8 +1,4 @@
-import {
-  footerLinksLabel,
-  loanCardsData,
-  navItems,
-} from "@/constants/constants";
+import { footerLinksLabel, loanCardsData } from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
 import {
