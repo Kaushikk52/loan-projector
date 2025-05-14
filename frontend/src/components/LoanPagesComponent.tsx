@@ -72,7 +72,11 @@ export default function LoanPagesComponent({
           </div>
         </div>
       </div>
-      <WhyChooseUs title={title} imgSrc={imgSrc} isHomeLoan={isHomeLoan} />
+      <WhyChooseUs
+        title={title}
+        imgSrc={imgSrc}
+        isHomeLoan={isHomeLoan ? isHomeLoan : false}
+      />
       <div className="flex flex-col gap-5 w-full px-2 max-w-6xl mx-auto">
         <div
           className={`w-full border border-gray-200 px-4 md:px-5 py-5 transition-all duration-300 ease-in-out  ${
