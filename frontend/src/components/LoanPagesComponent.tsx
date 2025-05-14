@@ -48,7 +48,7 @@ export default function LoanPagesComponent({
         </div>
         <div className="flex flex-col gap-10">
           <h1 className="text-5xl font-nunito font-bold">
-            Medical Loan Features & Benefits
+            {title} Features & Benefits
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-2">
             {benifitsCardData.map((data) => (

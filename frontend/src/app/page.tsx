@@ -89,8 +89,8 @@ export default function Home() {
                 over your finances. We take pride in delivering reliable
                 services, which has helped us become a trusted name in the
                 fintech space. At
-                <strong>Loan Projector</strong>, our mission is to provide fast,
-                accessible financial assistance through a secure and
+                <strong> Loan Projector</strong>, our mission is to provide
+                fast, accessible financial assistance through a secure and
                 user-friendly online platform.
               </p>
               <p className="text-xs md:text-sm lg:text-md text-start text-slate-500 md:font-semibold font-nunito max-w-xl">
