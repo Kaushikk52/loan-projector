@@ -143,15 +143,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#2D363D] p-5 text-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4 xl:px-0">
-          <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 text-sm">
-            <span>Privacy Policy</span>
-            <span className="border-l border-r px-2">Terms And Conditions</span>
-            <span>Disclaimer</span>
-          </div>
-          <div className="text-xs text-center md:text-right">
-            Copyright © 2025 Loan Projector. All rights Reserved.
-          </div>
+        <div className="text-xs text-center">
+          Copyright © 2025 Loan Projector. All rights Reserved.
         </div>
       </div>
     </footer>
