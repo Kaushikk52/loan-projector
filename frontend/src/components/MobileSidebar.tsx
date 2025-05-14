@@ -4,7 +4,7 @@ import { ChevronDown, X } from "lucide-react";
 import clsx from "clsx";
 import Link from "next/link";
 import { navItems } from "@/constants/constants";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ServicesDropDown from "./ServicesDropDown";
 import { usePathname } from "next/navigation";
 
@@ -20,10 +20,6 @@ export default function MobileSidebar({
   const [showServiceDropdown, setShowServiceDropdown] = useState(false);
 
   const pathname = usePathname();
-
-  useEffect(() => {
-    console.log(pathname, "path");
-  }, []);
 
   return (
     <>

@@ -4,7 +4,6 @@ import ImageSlider from "@/components/ImageSlider";
 import LoanCalculator from "@/components/loan-calculator";
 import LoadCardContainer from "@/components/LoanCardsContainer";
 import { ourJourneyData } from "@/constants/constants";
-import Image from "next/image";
 
 export default function Home() {
   return (

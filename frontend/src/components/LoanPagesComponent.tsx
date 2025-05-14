@@ -6,7 +6,6 @@ import { useState } from "react";
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import WhyChooseUs from "./WhyChooseUs";
-import LoanCalculator from "./loan-calculator";
 
 type LoanPagesComponentProps = {
   title: string;
