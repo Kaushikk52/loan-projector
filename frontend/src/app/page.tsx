@@ -1,6 +1,5 @@
 import { AnimatedNumberInView } from "@/components/AnimatedNumber";
 import HeroComponent from "@/components/HeroComponent";
-import ImageSlider from "@/components/ImageSlider";
 import LoanCalculator from "@/components/loan-calculator";
 import LoadCardContainer from "@/components/LoanCardsContainer";
 import { ourJourneyData } from "@/constants/constants";
