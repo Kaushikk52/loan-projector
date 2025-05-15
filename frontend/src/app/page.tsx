@@ -68,7 +68,7 @@ export default function Home() {
               <LoanCalculator
                 minLoanAmount={5000}
                 maxLoanAmount={100000}
-                minInterestRate={1}
+                minInterestRate={0.75}
                 maxInterestRate={1}
                 minTenure={1}
                 maxTenure={90}
@@ -108,12 +108,12 @@ export default function Home() {
       </div>
 
       {/* Image Slider */}
-      <div className="mt-32">
-        {/* <div className="text-xl w-fit sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-600 to-indigo-800 mx-auto">
+      {/* <div className="mt-32">
+        <div className="text-xl w-fit sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-600 to-indigo-800 mx-auto">
           <h1>Our partners</h1>
-        </div> */}
+        </div>
         <ImageSlider />
-      </div>
+      </div> */}
     </div>
   );
 }

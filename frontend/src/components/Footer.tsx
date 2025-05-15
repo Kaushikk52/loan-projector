@@ -1,4 +1,4 @@
-import { footerLinksLabel, loanCardsData } from "@/constants/constants";
+import { footerLinksLabel, servicesData } from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -39,10 +39,10 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h2 className="font-nunito text-xl font-bold mb-5">Services</h2>
-            {loanCardsData.slice(0, 5).map((service) => (
-              <Link href={service.path} key={service.label}>
+            {servicesData.slice(0, 5).map((service) => (
+              <Link href={service.path} key={service.name}>
                 <p className="font-nunito text-md font-semibold mt-3 text-slate-500">
-                  {service.label}
+                  {service.name}
                 </p>
               </Link>
             ))}

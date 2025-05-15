@@ -18,7 +18,7 @@ type LoanCalculatorProps = {
 
 export default function LoanCalculator(props: LoanCalculatorProps) {
   const [loanAmount, setLoanAmount] = useState(86000);
-  const [interestRate, setInterestRate] = useState(1);
+  const [interestRate, setInterestRate] = useState(props.isShortTerm ? 0.9 : 9);
   const [tenure, setTenure] = useState(12);
   const [emi, setEmi] = useState(0);
   const [interestPayable, setInterestPayable] = useState(0);
@@ -185,8 +185,8 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
                 thumbClassName="bg-blue-500 border-indigo-800"
               />
               <div className="flex justify-between text-sm text-gray-600">
-                <span>Min {minInterestRate}%</span>
-                <span>Max {maxInterestRate}%</span>
+                <span>{minInterestRate}%</span>
+                <span>{maxInterestRate}%</span>
               </div>
             </div>
           </div>
@@ -217,10 +217,10 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
               />
               <div className="flex justify-between text-sm text-gray-600">
                 <span>
-                  Min {minTenure} {isShortTerm ? "days" : "years"}
+                  {minTenure} {isShortTerm ? "days" : "years"}
                 </span>
                 <span>
-                  Max {maxTenure} {isShortTerm ? "days" : "years"}
+                  {maxTenure} {isShortTerm ? "days" : "years"}
                 </span>
               </div>
             </div>

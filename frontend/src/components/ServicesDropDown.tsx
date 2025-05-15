@@ -1,6 +1,6 @@
 "use client";
 
-import { loanCardsData } from "@/constants/constants";
+import { servicesData } from "@/constants/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -24,10 +24,10 @@ const ServicesDropDown = ({
         isMobileSidebar ? "" : "shadow-lg border z-50 rounded-md"
       }`}
     >
-      {loanCardsData.map((loan) => (
+      {servicesData.map((loan) => (
         <Link
           href={loan.path}
-          key={loan.label}
+          key={loan.name}
           onClick={() => setIsSidebarOpen?.(false)}
         >
           <div
@@ -35,7 +35,7 @@ const ServicesDropDown = ({
               pathname === loan.path ? "text-blue-600" : "text-gray-800"
             }`}
           >
-            {loan.label}
+            {loan.name}
           </div>
         </Link>
       ))}

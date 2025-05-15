@@ -154,3 +154,13 @@ export const footerLinksLabel = [
   { name: "About Us", path: "/about" },
   { name: "Conatct Us", path: "/contact" },
 ];
+
+export const servicesData = [
+  { name: "Business Loan", path: "/business-loan" },
+  { name: "Personal Loan", path: "/personal-loan" },
+  { name: "Payday Loan", path: "/payday-loan" },
+  { name: "Medical Loan", path: "/medical-loan" },
+  { name: "Home / Mortgage Loan", path: "/home-loan" },
+  { name: "Used car Loan", path: "/car-loan" },
+  { name: "Shopping Loan", path: "/shopping-loan" },
+];
