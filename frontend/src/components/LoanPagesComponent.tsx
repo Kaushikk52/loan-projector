@@ -7,11 +7,18 @@ import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import WhyChooseUs from "./WhyChooseUs";
 
+type req = {
+  title: string;
+};
+
 type LoanPagesComponentProps = {
   title: string;
   desc: string;
   imgSrc: string;
   isHomeLoan?: boolean;
+  documents?: string;
+  req?: req[];
+  isBusinessLoan?: boolean;
 };
 
 export default function LoanPagesComponent({
@@ -19,9 +26,10 @@ export default function LoanPagesComponent({
   desc,
   imgSrc,
   isHomeLoan,
+  documents,
+  req,
+  isBusinessLoan,
 }: LoanPagesComponentProps) {
-  console.log(imgSrc, "image");
-
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
   return (
@@ -123,8 +131,9 @@ export default function LoanPagesComponent({
                 </p>
                 <p>
                   ✓ <span className="font-bold">Documents:</span> Documents
-                  required are PAN, Aadhar, Salary Slip, Bank Statement, Utility
-                  Bills, Rent Agreements, etc.
+                  {documents
+                    ? documents
+                    : " required are PAN, Aadhar, Salary Slip, Bank Statement, Utility Bills, Rent Agreements, etc"}
                 </p>
                 <p>
                   ✓ <span className="font-bold">Income:</span> The per month
@@ -182,12 +191,21 @@ export default function LoanPagesComponent({
                   ✓ <span className="font-bold">Bank Statement</span>
                 </p>
                 <p>
-                  ✓ <span className="font-bold">ITR</span> (for self-employed)
+                  ✓{" "}
+                  <span className="font-bold">
+                    {isBusinessLoan ? "Latest Two Years ITR" : "ITR"}
+                  </span>{" "}
+                  (for self-employed)
                 </p>
                 <p>
                   ✓ <span className="font-bold">Utility bills</span> like
                   electricity Bills, Gas Bills, telephone bills, etc.
                 </p>
+                {req?.map((req, index) => (
+                  <p key={index}>
+                    ✓ <span className="font-bold">{req.title}</span>
+                  </p>
+                ))}
               </div>
             </div>
           </div>

@@ -75,7 +75,7 @@ export default function NavBar() {
             ))}
           </div>
         </div>
-        <div className="bg-blue-500 text-base font-semibold font-nunito md:text-lg py-2 px-3 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg">
+        <div className="bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-2 px-3 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg">
           <Link
             href={
               "https://docs.google.com/forms/d/e/1FAIpQLSfmhMb7mOYMC3MCuHGfOfFHxqMj7KIyCQlpkhvj-1kodZy4Ig/viewform"
