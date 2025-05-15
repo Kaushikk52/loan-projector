@@ -41,33 +41,22 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
     let totalPaymentValue = 0;
 
     if (isShortTerm) {
-      // For short-term loans, use simple interest (not compound)
-      // Simple interest = Principal × Rate × Time
-      // For daily interest, rate is per day and time is in days
+      const dailyInterestRate = interestRate / 100; // No division by 30
 
-      // Convert annual rate to daily rate (simple division)
-      const dailyInterestRate = interestRate / 100 / 30; // Assuming monthly rate divided by 30 days
-
-      // Calculate total interest
       totalInterest = loanAmount * dailyInterestRate * tenure;
 
-      // Total payment is principal plus interest
       totalPaymentValue = loanAmount + totalInterest;
 
-      // Daily payment is total divided by number of days
       emiValue = totalPaymentValue / tenure;
     } else {
-      // For long-term loan (calculated yearly, paid monthly)
       const monthlyInterestRate = interestRate / 100 / 12;
-      const totalMonths = tenure * 12; // Convert years to months
+      const totalMonths = tenure * 12;
 
       if (monthlyInterestRate === 0) {
-        // Handle zero interest case
         emiValue = loanAmount / totalMonths;
         totalPaymentValue = loanAmount;
         totalInterest = 0;
       } else {
-        // Standard EMI formula for compound interest
         emiValue =
           (loanAmount *
             monthlyInterestRate *
