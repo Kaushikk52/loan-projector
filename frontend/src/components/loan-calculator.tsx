@@ -13,6 +13,7 @@ type LoanCalculatorProps = {
   minTenure: number;
   maxTenure: number;
   isShortTerm?: boolean;
+  isPayday?: boolean;
 };
 
 export default function LoanCalculator(props: LoanCalculatorProps) {
@@ -40,7 +41,7 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
     let totalInterest = 0;
     let totalPaymentValue = 0;
 
-    if (isShortTerm) {
+    if (isShortTerm || props.isPayday) {
       const dailyInterestRate = interestRate / 100; // No division by 30
 
       totalInterest = loanAmount * dailyInterestRate * tenure;
@@ -184,7 +185,7 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
               htmlFor="tenure"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Tenure ({isShortTerm ? "days" : "years"})
+              Tenure ({isShortTerm || props.isPayday ? "days" : "years"})
             </label>
             <Input
               id="tenure"
@@ -205,10 +206,10 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
               />
               <div className="flex justify-between text-sm text-gray-600">
                 <span>
-                  {minTenure} {isShortTerm ? "days" : "years"}
+                  {minTenure} {isShortTerm || props.isPayday ? "days" : "years"}
                 </span>
                 <span>
-                  {maxTenure} {isShortTerm ? "days" : "years"}
+                  {maxTenure} {isShortTerm || props.isPayday ? "days" : "years"}
                 </span>
               </div>
             </div>
@@ -218,7 +219,7 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
         <div className="bg-gray-100 rounded-md p-4 flex items-center justify-evenly gap-4 text-center">
           <div>
             <p className="text-sm text-gray-600">
-              {isShortTerm ? "Daily Payment" : "Monthly EMI"}
+              {isShortTerm || props.isPayday ? "Daily Payment" : "Monthly EMI"}
             </p>
             <p className="text-xl font-bold">₹ {emi.toLocaleString()}</p>
           </div>

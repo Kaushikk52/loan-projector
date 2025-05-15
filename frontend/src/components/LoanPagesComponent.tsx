@@ -19,6 +19,7 @@ type LoanPagesComponentProps = {
   documents?: string;
   req?: req[];
   isBusinessLoan?: boolean;
+  isPayday?: boolean;
 };
 
 export default function LoanPagesComponent({
@@ -29,6 +30,7 @@ export default function LoanPagesComponent({
   documents,
   req,
   isBusinessLoan,
+  isPayday,
 }: LoanPagesComponentProps) {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
@@ -80,7 +82,11 @@ export default function LoanPagesComponent({
           </div>
         </div>
       </div>
-      <WhyChooseUs title={title} isHomeLoan={isHomeLoan ? isHomeLoan : false} />
+      <WhyChooseUs
+        title={title}
+        isHomeLoan={isHomeLoan ? isHomeLoan : false}
+        isPayday={isPayday ? isPayday : false}
+      />
       <div className="flex flex-col gap-5 w-full px-2 max-w-6xl mx-auto">
         <div
           className={`w-full border border-gray-200 px-4 md:px-5 py-5 transition-all duration-300 ease-in-out  ${

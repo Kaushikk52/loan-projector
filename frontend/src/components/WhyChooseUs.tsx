@@ -8,9 +8,10 @@ import LoanCalculator from "./loan-calculator";
 type WhyChooseUsProps = {
   title: string;
   isHomeLoan: boolean;
+  isPayday: boolean;
 };
 
-const WhyChooseUs = ({ title, isHomeLoan }: WhyChooseUsProps) => {
+const WhyChooseUs = ({ title, isHomeLoan, isPayday }: WhyChooseUsProps) => {
   return (
     <div className="min-h-fit bg-gray-50 p-8 w-full py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -48,14 +49,27 @@ const WhyChooseUs = ({ title, isHomeLoan }: WhyChooseUsProps) => {
 
           {/* Right: Image */}
           <div className="flex-1 max-w-lg">
-            <LoanCalculator
-              minLoanAmount={100000}
-              maxLoanAmount={10000000}
-              minInterestRate={isHomeLoan ? 6 : 10.35}
-              maxInterestRate={isHomeLoan ? 10 : 35}
-              minTenure={1}
-              maxTenure={isHomeLoan ? 25 : 7}
-            />
+            {isPayday ? (
+              <LoanCalculator
+                minLoanAmount={5000}
+                maxLoanAmount={100000}
+                minInterestRate={0.75}
+                maxInterestRate={1}
+                minTenure={1}
+                maxTenure={90}
+                isShortTerm={true}
+              />
+            ) : (
+              <LoanCalculator
+                minLoanAmount={100000}
+                maxLoanAmount={10000000}
+                minInterestRate={isHomeLoan ? 6 : 10.35}
+                maxInterestRate={isHomeLoan ? 10 : 35}
+                minTenure={1}
+                maxTenure={isHomeLoan ? 25 : 7}
+                isPayday={isPayday ? isPayday : false}
+              />
+            )}
           </div>
         </div>
       </div>
