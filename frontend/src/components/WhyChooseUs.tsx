@@ -7,11 +7,10 @@ import LoanCalculator from "./loan-calculator";
 
 type WhyChooseUsProps = {
   title: string;
-  imgSrc: string;
   isHomeLoan: boolean;
 };
 
-const WhyChooseUs = ({ title, imgSrc, isHomeLoan }: WhyChooseUsProps) => {
+const WhyChooseUs = ({ title, isHomeLoan }: WhyChooseUsProps) => {
   return (
     <div className="min-h-fit bg-gray-50 p-8 w-full py-16">
       <div className="max-w-6xl mx-auto px-6">
