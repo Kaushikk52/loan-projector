@@ -3,7 +3,6 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { SiWhatsapp } from "react-icons/si";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Loan Projector",
