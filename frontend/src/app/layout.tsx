@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { SiWhatsapp } from "react-icons/si";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Loan Projector",
@@ -22,9 +23,11 @@ export default function RootLayout({
           {children}
           <Footer />
           {/* WhatsApp floating button */}
-          <div className="fixed bottom-15 right-4 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg cursor-pointer hover:bg-green-600">
-            <SiWhatsapp className="text-2xl" />
-          </div>
+          <a href={"https://wa.me/917829712159"} target="_blank">
+            <div className="fixed bottom-15 right-4 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg cursor-pointer hover:bg-green-600">
+              <SiWhatsapp className="text-2xl" />
+            </div>
+          </a>
         </div>
       </body>
     </html>
