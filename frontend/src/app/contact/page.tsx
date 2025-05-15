@@ -7,10 +7,10 @@ export default function ContactUs() {
     <div className="flex flex-col items-center justify-center bg-white px-6 py-12 max-w-6xl mx-auto gap-10">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col gap-10">
-          <h1 className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-nunito font-medium text-gray-900">
+          <h1 className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-nunito font-bold text-gray-900">
             Contact Us
           </h1>
-          <p className="text-gray-700 font-nunito text-sm font-medium">
+          <p className="text-gray-700 font-nunito text-md font-semibold">
             If you have any questions or want to{" "}
             <strong className="font-semibold font-nunito">
               get a free estimate
@@ -19,7 +19,7 @@ export default function ContactUs() {
             be very happy to help you!
           </p>
 
-          <p className="text-sm mt-1 flex flex-col gap-5">
+          <p className="text-sm font-semibold mt-1 flex flex-col gap-5">
             <span className="flex items-center gap-2">
               <FiPhone color="#004DCB" /> +91 78297 12159
             </span>
@@ -44,7 +44,7 @@ export default function ContactUs() {
       </div>
       <div className="flex flex-col lg:flex-row gap-20">
         <div className="">
-          <Image src={"/map-img.png"} alt="map" height={400} width={600} />
+          <Image src={"/final-map.png"} alt="map" height={1000} width={1000} />
         </div>
         <div className="flex flex-col gap-10">
           <h1 className="text-4xl font-nunito font-bold text-balance">
@@ -58,7 +58,47 @@ export default function ContactUs() {
               <span className="text-blue-600 text-5xl">•</span> Mumbai
             </h1>
             <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
-              <span className="text-blue-600 text-5xl">•</span> Banglore
+              <span className="text-blue-600 text-5xl">•</span> Bengaluru
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Pune
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Kolkata
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Chennai
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Hyderabad
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Ahmedabad
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Maharashtra
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> National Capital
+              Territory
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> West Bengal
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Tamil Nadu
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Karnataka
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Telangana
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Andhra Pradesh
+            </h1>
+            <h1 className="text-xl font-nunito font-medium text-slate-600 flex items-center gap-2">
+              <span className="text-blue-600 text-5xl">•</span> Gujarat
             </h1>
           </div>
         </div>

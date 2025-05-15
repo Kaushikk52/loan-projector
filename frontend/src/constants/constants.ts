@@ -59,7 +59,7 @@ export const loanCardsData = [
     theme: "purple",
     icon: IoCarSportSharp,
     description:
-      "Drive home your dream used car with our easy and affordable loan options tailored just for you.",
+      "Get higher loan eligibility up to 200% of the car valuation from across 30+ lenders at attractive interest rates all across India.",
     path: "/car-loan",
   },
   {

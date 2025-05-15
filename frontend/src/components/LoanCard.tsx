@@ -43,7 +43,7 @@ const LoanCard = ({ label, theme, icon: Icon, description }: LoanCardProps) => {
 
       {/* Title */}
       <motion.h3
-        className={`text-${theme}-800 text-center font-bold text-xl absolute w-full px-6`}
+        className={`text-slate-800 text-center font-bold text-xl absolute w-full px-6`}
         initial={{ y: 80 }}
         animate={{
           y: isHovered ? 10 : 80,
@@ -61,11 +61,11 @@ const LoanCard = ({ label, theme, icon: Icon, description }: LoanCardProps) => {
       {/* Description */}
       {description && (
         <motion.p
-          className="text-gray-600 text-sm absolute w-full left-0 px-8"
+          className="text-gray-600 text-sm absolute w-full left-0 px-8 "
           initial={{ y: 240, opacity: 0 }}
           style={{ color: theme }}
           animate={{
-            y: isHovered ? 80 : 240,
+            y: isHovered ? 70 : 240,
             opacity: isHovered ? 1 : 0,
           }}
           transition={{
