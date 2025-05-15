@@ -1,4 +1,3 @@
-import ImageSlider from "@/components/ImageSlider";
 import { aboutUsImpactData } from "@/constants/constants";
 
 export default function AboutPage() {
