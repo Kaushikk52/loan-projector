@@ -90,6 +90,7 @@ export default function NavBar() {
         <MobileSidebar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
+          setOpen={setOpen}
         />
       </div>
     </div>

@@ -11,15 +11,24 @@ import { usePathname } from "next/navigation";
 type SidebarProps = {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (value: boolean) => void;
+  setOpen: (value: boolean) => void;
 };
 
 export default function MobileSidebar({
   isSidebarOpen,
   setIsSidebarOpen,
+  setOpen,
 }: SidebarProps) {
   const [showServiceDropdown, setShowServiceDropdown] = useState(false);
 
   const pathname = usePathname();
+
+  const handleLinkClick = (isOpen: boolean) => {
+    setIsSidebarOpen(false);
+    if (isOpen) {
+      setOpen(true);
+    }
+  };
 
   return (
     <>
@@ -80,7 +89,9 @@ export default function MobileSidebar({
                   </>
                 ) : (
                   <Link
-                    onClick={() => setIsSidebarOpen(false)}
+                    onClick={() =>
+                      handleLinkClick(tag.openDialoge ? tag.openDialoge : false)
+                    }
                     href={tag.path}
                     className={`text-sm uppercase font-medium hover:font-semibold cursor-pointer ${
                       pathname === tag.path ? "text-blue-600" : "text-gray-600"
