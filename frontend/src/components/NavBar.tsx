@@ -1,6 +1,6 @@
 "use client";
 
-import { navItems } from "@/constants/constants";
+import { navItems, navItemsForTablets } from "@/constants/constants";
 import MobileSidebar from "./MobileSidebar";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -32,7 +32,7 @@ export default function NavBar() {
         </div>
       </Link>
       <div className="flex items-center gap-2 md:gap-4">
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <div className="flex items-center md:space-x-4 lg:space-x-8">
             {navItems.map((item) => (
               <div
@@ -40,6 +40,48 @@ export default function NavBar() {
                 className="relative"
                 onMouseEnter={() => item.dropMenu && setShowDropdown(true)}
                 onMouseLeave={() => item.dropMenu && setShowDropdown(false)}
+              >
+                <Link href={item.path}>
+                  <h1
+                    onClick={() =>
+                      handleDialogeOpen(
+                        item.openDialoge ? item.openDialoge : false
+                      )
+                    }
+                    className={`cursor-pointer font-black text-[14px] text-[#25406e] hover:text-blue-700 font-nunito transition duration-200 flex items-center gap-2 ${
+                      pathname === item.path
+                        ? "text-blue-700"
+                        : "text-[#25406e]"
+                    }`}
+                  >
+                    {item.label}
+                    {item.dropMenu && (
+                      <ChevronDown
+                        size={16}
+                        className={`${
+                          showDropDown && "rotate-180"
+                        } transition-transform duration-200`}
+                      />
+                    )}
+                  </h1>
+                </Link>
+
+                {item.label === "Services" && showDropDown && (
+                  <div className="absolute top-full left-0 mt-1">
+                    <ServicesDropDown setShowDropdown={setShowDropdown} />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="hidden md:block lg:hidden xl:hidden 2xl:hidden">
+          <div className="flex items-center md:space-x-4 lg:space-x-8">
+            {navItemsForTablets.map((item) => (
+              <div
+                key={item.label}
+                className="relative"
+                onClick={() => item.dropMenu && setShowDropdown(!showDropDown)}
               >
                 <Link href={item.path}>
                   <h1

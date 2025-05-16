@@ -21,6 +21,14 @@ export const navItems = [
   { label: "Contact Us", path: "/contact" },
 ];
 
+export const navItemsForTablets = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "", dropMenu: true },
+  { label: "Repay", path: "", openDialoge: true },
+  { label: "Contact", path: "/contact" },
+];
+
 export const loanCardsData = [
   {
     label: "Personal / Business Loans",

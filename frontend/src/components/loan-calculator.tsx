@@ -42,7 +42,7 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
     let totalPaymentValue = 0;
 
     if (isShortTerm || props.isPayday) {
-      const dailyInterestRate = interestRate / 100; // No division by 30
+      const dailyInterestRate = interestRate / 100;
 
       totalInterest = loanAmount * dailyInterestRate * tenure;
 
@@ -79,10 +79,12 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
   };
 
   const handleLoanInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number.parseInt(e.target.value) || 0;
-    if (value >= minLoanAmount && value <= maxLoanAmount) {
-      setLoanAmount(value);
+    const raw = e.target.value;
+    if (raw === "") {
+      setLoanAmount(NaN);
+      return;
     }
+    setLoanAmount(Number(raw));
   };
 
   const handleInterestRateChange = (value: number[]) => {
@@ -92,10 +94,12 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
   const handleInterestInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const value = Number.parseFloat(e.target.value) || 0;
-    if (value >= minInterestRate && value <= maxInterestRate) {
-      setInterestRate(value);
+    const raw = e.target.value;
+    if (raw === "") {
+      setInterestRate(NaN);
+      return;
     }
+    setInterestRate(Number(raw));
   };
 
   const handleTenureChange = (value: number[]) => {
@@ -103,10 +107,12 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
   };
 
   const handleTenureInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number.parseInt(e.target.value) || 0;
-    if (value >= minTenure && value <= maxTenure) {
-      setTenure(value);
+    const raw = e.target.value;
+    if (raw === "") {
+      setTenure(NaN);
+      return;
     }
+    setTenure(Number(raw));
   };
 
   return (
@@ -126,13 +132,13 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
           <Input
             id="loanAmount"
             type="number"
-            value={loanAmount}
+            value={isNaN(loanAmount) ? "" : loanAmount}
             onChange={handleLoanInputChange}
             className="mb-2"
           />
           <div className="mt-2">
             <Slider
-              value={[loanAmount]}
+              value={[loanAmount || minLoanAmount]}
               min={minLoanAmount}
               max={maxLoanAmount}
               step={1000}
@@ -158,14 +164,14 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
             <Input
               id="interestRate"
               type="number"
-              value={interestRate}
+              value={isNaN(interestRate) ? "" : interestRate}
               onChange={handleInterestInputChange}
               className="mb-2"
               step="0.1"
             />
             <div className="mt-2">
               <Slider
-                value={[interestRate]}
+                value={[interestRate || minInterestRate]}
                 min={minInterestRate}
                 max={maxInterestRate}
                 step={0.1}
@@ -190,13 +196,13 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
             <Input
               id="tenure"
               type="number"
-              value={tenure}
+              value={isNaN(tenure) ? "" : tenure}
               onChange={handleTenureInputChange}
               className="mb-2"
             />
             <div className="mt-2">
               <Slider
-                value={[tenure]}
+                value={[tenure || minTenure]}
                 min={minTenure}
                 max={maxTenure}
                 step={1}
@@ -221,18 +227,23 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
             <p className="text-sm text-gray-600">
               {isShortTerm || props.isPayday ? "Daily Payment" : "Monthly EMI"}
             </p>
-            <p className="text-xl font-bold">₹ {emi.toLocaleString()}</p>
+            <p className="text-sm font-semibold lg:text-xl lg:font-bold flex flex-col md:flex-row items-center">
+              <span>₹ </span>
+              {emi.toLocaleString()}
+            </p>
           </div>
           <div>
             <p className="text-sm text-gray-600">Interest Payable</p>
-            <p className="text-xl font-bold">
-              ₹ {interestPayable.toLocaleString()}
+            <p className="text-sm font-semibold lg:text-xl lg:font-bold flex flex-col md:flex-row items-center">
+              <span>₹ </span>
+              {interestPayable.toLocaleString()}
             </p>
           </div>
           <div className="col-span-2">
-            <p className="text-sm text-gray-600">Total Amount Payable</p>
-            <p className="text-xl font-bold">
-              ₹ {totalPayment.toLocaleString()}
+            <p className="text-sm text-gray-600">Total Amount</p>
+            <p className="text-sm font-semibold lg:text-xl lg:font-bold flex flex-col md:flex-row items-center">
+              <span>₹ </span>
+              {totalPayment.toLocaleString()}
             </p>
           </div>
         </div>

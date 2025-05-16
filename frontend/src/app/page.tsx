@@ -32,14 +32,14 @@ export default function Home() {
         </div>
 
         {/* Journey + Short-Term Loans Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 flex flex-col gap-52">
+        <div className="w-full max-w-7xl mx-auto px-4 flex flex-col gap-32 lg:gap-52">
           {/* OUR JOURNEY */}
           <div className="flex flex-col gap-10 items-center">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-600 to-indigo-800">
               OUR JOURNEY SO FAR
             </h1>
 
-            <div className="flex flex-col md:flex-row items-center justify-center flex-wrap gap-10">
+            <div className="flex flex-col lg:flex-row items-center justify-center flex-wrap gap-15 lg:gap-10">
               {ourJourneyData.map((data) => (
                 <div
                   className="flex flex-col md:flex-row items-center gap-5"
