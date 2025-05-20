@@ -12,13 +12,11 @@ import RepayLoan from "./RepayLoan";
 type SidebarProps = {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (value: boolean) => void;
-  setOpen: (value: boolean) => void;
 };
 
 export default function MobileSidebar({
   isSidebarOpen,
   setIsSidebarOpen,
-  setOpen,
 }: SidebarProps) {
   const [showServiceDropdown, setShowServiceDropdown] = useState(false);
   const [openRepay, setOpenRepay] = useState(false);

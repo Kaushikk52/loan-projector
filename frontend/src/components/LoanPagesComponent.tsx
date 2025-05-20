@@ -35,12 +35,12 @@ export default function LoanPagesComponent({
 }: LoanPagesComponentProps) {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
-  const loanCalcRef = useRef<any>(null);
+  const loanCalcRef = useRef<HTMLDivElement>(null);
   const { setScrollRef } = useScrollContext();
 
   useEffect(() => {
-    setScrollRef(loanCalcRef as React.RefObject<any>);
-  }, [loanCalcRef]);
+    setScrollRef(loanCalcRef as React.RefObject<HTMLElement>);
+  }, [loanCalcRef, setScrollRef]);
 
   return (
     <div className="flex flex-col gap-10">

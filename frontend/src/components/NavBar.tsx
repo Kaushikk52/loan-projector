@@ -18,7 +18,6 @@ export default function NavBar() {
   const [showDropDown, setShowDropdown] = useState(false);
   const [openApplyNow, setOpenApplyNow] = useState(false);
   const [openRepay, setOpenRepay] = useState(false);
-  const [open, SetOpen] = useState(false);
 
   const { scrollToRef } = useScrollContext();
 
@@ -154,7 +153,6 @@ export default function NavBar() {
         <MobileSidebar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
-          setOpen={SetOpen}
         />
       </div>
     </div>

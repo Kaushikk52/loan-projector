@@ -1,13 +1,6 @@
 // context/ScrollContext.tsx
 "use client";
-import {
-  createContext,
-  useContext,
-  useRef,
-  useState,
-  ReactNode,
-  RefObject,
-} from "react";
+import { createContext, useContext, useRef, ReactNode, RefObject } from "react";
 
 type ScrollContextType = {
   setScrollRef: (ref: RefObject<HTMLElement>) => void;
