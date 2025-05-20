@@ -2,10 +2,11 @@
 
 import { benifitsCardData } from "@/constants/constants";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import WhyChooseUs from "./WhyChooseUs";
+import { useScrollContext } from "@/context/ScrollContext";
 
 type req = {
   title: string;
@@ -34,6 +35,13 @@ export default function LoanPagesComponent({
 }: LoanPagesComponentProps) {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
+  const loanCalcRef = useRef<HTMLDivElement>(null);
+  const { setScrollRef } = useScrollContext();
+
+  useEffect(() => {
+    setScrollRef(loanCalcRef as React.RefObject<HTMLElement>);
+  }, [loanCalcRef, setScrollRef]);
+
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col items-center gap-20  max-w-6xl mx-auto">
@@ -82,11 +90,13 @@ export default function LoanPagesComponent({
           </div>
         </div>
       </div>
-      <WhyChooseUs
-        title={title}
-        isHomeLoan={isHomeLoan ? isHomeLoan : false}
-        isPayday={isPayday ? isPayday : false}
-      />
+      <div ref={loanCalcRef}>
+        <WhyChooseUs
+          title={title}
+          isHomeLoan={isHomeLoan ? isHomeLoan : false}
+          isPayday={isPayday ? isPayday : false}
+        />
+      </div>
       <div className="flex flex-col gap-5 w-full px-2 max-w-6xl mx-auto">
         <div
           className={`w-full border border-gray-200 px-4 md:px-5 py-5 transition-all duration-300 ease-in-out  ${

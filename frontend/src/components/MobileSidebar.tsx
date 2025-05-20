@@ -7,26 +7,26 @@ import { navItems } from "@/constants/constants";
 import { useState } from "react";
 import ServicesDropDown from "./ServicesDropDown";
 import { usePathname } from "next/navigation";
+import RepayLoan from "./RepayLoan";
 
 type SidebarProps = {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (value: boolean) => void;
-  setOpen: (value: boolean) => void;
 };
 
 export default function MobileSidebar({
   isSidebarOpen,
   setIsSidebarOpen,
-  setOpen,
 }: SidebarProps) {
   const [showServiceDropdown, setShowServiceDropdown] = useState(false);
+  const [openRepay, setOpenRepay] = useState(false);
 
   const pathname = usePathname();
 
   const handleLinkClick = (isOpen: boolean) => {
     setIsSidebarOpen(false);
     if (isOpen) {
-      setOpen(true);
+      setOpenRepay(true);
     }
   };
 
@@ -36,7 +36,7 @@ export default function MobileSidebar({
       <div
         className={clsx(
           "fixed inset-0 bg-opacity-40 transition-opacity duration-300 z-20",
-          isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          isSidebarOpen ? "opacity-40 visible" : "opacity-0 invisible"
         )}
         onClick={() => setIsSidebarOpen(false)}
       />
@@ -100,6 +100,7 @@ export default function MobileSidebar({
                     {tag.label}
                   </Link>
                 )}
+                <RepayLoan openRepay={openRepay} setOpenRepay={setOpenRepay} />
               </div>
             ))}
           </div>

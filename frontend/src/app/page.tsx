@@ -1,10 +1,22 @@
+"use client";
+
 import { AnimatedNumberInView } from "@/components/AnimatedNumber";
 import HeroComponent from "@/components/HeroComponent";
 import LoanCalculator from "@/components/loan-calculator";
 import LoadCardContainer from "@/components/LoanCardsContainer";
 import { ourJourneyData } from "@/constants/constants";
+import { useScrollContext } from "@/context/ScrollContext";
+
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const loanCalcRef = useRef<HTMLDivElement>(null);
+  const { setScrollRef } = useScrollContext();
+
+  useEffect(() => {
+    setScrollRef(loanCalcRef as React.RefObject<HTMLElement>);
+  }, [loanCalcRef, setScrollRef]);
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center gap-20">
@@ -63,7 +75,7 @@ export default function Home() {
 
           {/* SHORT-TERM LOANS */}
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center" ref={loanCalcRef}>
               <LoanCalculator
                 minLoanAmount={5000}
                 maxLoanAmount={100000}

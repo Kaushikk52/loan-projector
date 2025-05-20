@@ -12,7 +12,7 @@ import { FiClock, FiMail, FiPhone } from "react-icons/fi";
 export default function Footer() {
   return (
     <footer className="pt-10 mt-10 border-t-2 bg-slate-100">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-12 gap-6 items-start px-4 xl:px-0  xl:justify-items-center mb-5 xl:mb-0">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-12 gap-6 pb-10 items-start px-4 xl:px-0  xl:justify-items-center mb-5 xl:mb-0">
         {/* Left Section */}
         <div className="xl:col-span-9 grid grid-cols-1 xl:grid-cols-3 gap-6 xl:border-r-2 xl:pr-10  xl:justify-items-center">
           <div>
@@ -70,9 +70,23 @@ export default function Footer() {
           </div>
           {/* Push this div to the bottom */}
           <div className="flex gap-4 mt-auto">
-            <FaFacebookF className="text-xl hover:text-blue-400 cursor-pointer" />
+            <Link
+              href={
+                "https://www.facebook.com/share/15QsCN811d/?mibextid=wwXIfr"
+              }
+              target="_blank"
+            >
+              <FaFacebookF className="text-xl hover:text-blue-400 cursor-pointer" />
+            </Link>
             <FaXTwitter className="text-xl hover:text-blue-400 cursor-pointer" />
-            <FaInstagram className="text-xl hover:text-pink-400 cursor-pointer" />
+            <Link
+              href={
+                "https://www.instagram.com/loan_projector?igsh=NGhyOHJ0OG93OXNm&utm_source=qr"
+              }
+              target="_blank"
+            >
+              <FaInstagram className="text-xl hover:text-pink-400 cursor-pointer" />
+            </Link>
             <FaYoutube className="text-xl hover:text-red-500 cursor-pointer" />
           </div>
         </div>
