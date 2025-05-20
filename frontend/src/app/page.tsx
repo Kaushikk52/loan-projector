@@ -10,11 +10,11 @@ import { useScrollContext } from "@/context/ScrollContext";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
-  const loanCalcRef = useRef<HTMLElement>(null);
+  const loanCalcRef = useRef<any>(null);
   const { setScrollRef } = useScrollContext();
 
   useEffect(() => {
-    setScrollRef(loanCalcRef as React.RefObject<HTMLElement>);
+    setScrollRef(loanCalcRef as React.RefObject<any>);
   }, [loanCalcRef]);
 
   return (

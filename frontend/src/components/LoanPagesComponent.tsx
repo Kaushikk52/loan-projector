@@ -35,11 +35,11 @@ export default function LoanPagesComponent({
 }: LoanPagesComponentProps) {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
-  const loanCalcRef = useRef<HTMLDivElement>(null);
+  const loanCalcRef = useRef<any>(null);
   const { setScrollRef } = useScrollContext();
 
   useEffect(() => {
-    setScrollRef(loanCalcRef as React.RefObject<HTMLElement>);
+    setScrollRef(loanCalcRef as React.RefObject<any>);
   }, [loanCalcRef]);
 
   return (
