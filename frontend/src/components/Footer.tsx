@@ -144,7 +144,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="bg-[#2D363D] p-5 text-white">
         <div className="text-xs text-center">
-          Copyright © 2025 Loan Projector. All rights Reserved.
+          Copyright © 2025 Loan Projector. All rights Reserved by A9 Business.
         </div>
       </div>
     </footer>
