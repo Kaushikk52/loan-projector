@@ -9,19 +9,29 @@ import { ChevronDown } from "lucide-react";
 import ServicesDropDown from "./ServicesDropDown";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import RepayDialog from "./RepayDialog";
+import ApplyNow from "./ApplyNow";
+import { useScrollContext } from "@/context/ScrollContext";
+import RepayLoan from "./RepayLoan";
 
 export default function NavBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showDropDown, setShowDropdown] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [openApplyNow, setOpenApplyNow] = useState(false);
+  const [openRepay, setOpenRepay] = useState(false);
+  const [open, SetOpen] = useState(false);
+
+  const { scrollToRef } = useScrollContext();
 
   const pathname = usePathname();
 
   const handleDialogeOpen = (isDialog: boolean) => {
     if (isDialog) {
-      setOpen(true);
+      setOpenRepay(true);
     }
+  };
+
+  const handleApplyNow = () => {
+    setOpenApplyNow(true);
   };
 
   return (
@@ -117,17 +127,25 @@ export default function NavBar() {
             ))}
           </div>
         </div>
-        <div className="bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-2 px-3 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg">
-          <Link
-            href={
-              "https://docs.google.com/forms/d/e/1FAIpQLSfmhMb7mOYMC3MCuHGfOfFHxqMj7KIyCQlpkhvj-1kodZy4Ig/viewform"
-            }
-            target="_blank"
-          >
-            <h1 className="text-md font-nunito">Apply Now</h1>
-          </Link>
-          <RepayDialog open={open} setOpen={setOpen} />
+        <div
+          onClick={handleApplyNow}
+          className="bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-2 px-3 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg"
+        >
+          <h1 className="text-md font-nunito flex items-center gap-2">
+            Apply <span className="hidden md:block">Now</span>
+          </h1>
         </div>
+        <button
+          className="flex items-center gap-2 bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-2 px-3 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg"
+          onClick={scrollToRef}
+        >
+          <span className="hidden md:block">EMI</span> Calculator
+        </button>
+        <ApplyNow
+          openApplyNow={openApplyNow}
+          setOpenApplyNow={setOpenApplyNow}
+        />
+        <RepayLoan openRepay={openRepay} setOpenRepay={setOpenRepay} />
       </div>
       <div className="block md:hidden">
         <button>
@@ -136,7 +154,7 @@ export default function NavBar() {
         <MobileSidebar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
-          setOpen={setOpen}
+          setOpen={SetOpen}
         />
       </div>
     </div>
