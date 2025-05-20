@@ -34,7 +34,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg relative z-50">
+    <div className="flex items-center justify-between p-4 md:px-8 md:py-4 shadow-lg relative z-50 gap-2">
       <Link href={"/"}>
         <div>
           <Image src={"/main-logo.jpeg"} height={200} width={200} alt="logo" />

@@ -24,7 +24,7 @@ export default function RepayLoan({ openRepay, setOpenRepay }: RepayLoanProps) {
     if (!formData.name.trim())
       return toast.error("Please enter your full name.");
     if (!/^\d{10}$/.test(formData.number))
-      return toast.error("Enter a valid 10-digit number number.");
+      return toast.error("Enter a valid 10-digit number.");
 
     setIsSubmitting(true);
     try {
@@ -78,7 +78,7 @@ export default function RepayLoan({ openRepay, setOpenRepay }: RepayLoanProps) {
         <input
           type="tel"
           name="number"
-          placeholder="number Number"
+          placeholder="Number"
           value={formData.number}
           onChange={handleChange}
           required
