@@ -34,21 +34,21 @@ export default function ApplyNow({
   const handleSubmit = async () => {
     // Basic form validations
     if (!formData.name.trim())
-      return toast.error("Please enter your full name.");
+      return toast.error("Please enter your full name.",{position: "bottom-right"});
     if (!/^\d{10}$/.test(formData.mobile))
-      return toast.error("Enter a valid 10-digit mobile number.");
+      return toast.error("Enter a valid 10-digit mobile number.",{position: "bottom-right"});
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
-      return toast.error("Enter a valid email address.");
+      return toast.error("Enter a valid email address.",{position: "bottom-right"});
     if (!formData.occupation)
-      return toast.error("Please select an occupation.");
+      return toast.error("Please select an occupation.",{position: "bottom-right"});
     if (!/^\d+$/.test(formData.loanAmount))
-      return toast.error("Enter a valid loan amount.");
+      return toast.error("Enter a valid loan amount.",{position: "bottom-right"});
     if (!formData.address.trim())
-      return toast.error("Please enter your address.");
+      return toast.error("Please enter your address.",{position: "bottom-right"});
     if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test(formData.panNumber))
-      return toast.error("Enter a valid PAN number.");
+      return toast.error("Enter a valid PAN number.",{position: "bottom-right"});
     if (!/^\d+$/.test(formData.salary))
-      return toast.error("Enter a valid monthly salary.");
+      return toast.error("Enter a valid monthly salary.",{position: "bottom-right"});
 
     setIsSubmitting(true);
     try {
@@ -76,7 +76,7 @@ export default function ApplyNow({
         }
       );
 
-      toast.success("Form submitted successfully!");
+      toast.success("Form submitted successfully!",{position: "bottom-right"});
 
       setOpenApplyNow(false);
 
@@ -91,7 +91,7 @@ export default function ApplyNow({
         salary: "",
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      // console.error("Error submitting form:", error);
       toast.error(
         "There was an error submitting your application. Please try again later."
       );
