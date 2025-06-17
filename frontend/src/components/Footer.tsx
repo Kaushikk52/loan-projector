@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Left Section */}
         <div className="xl:col-span-9 grid grid-cols-1 xl:grid-cols-3 gap-6 xl:border-r-2 xl:pr-10  xl:justify-items-center">
           <div>
-            <Image src="/main-logo.png" height={200} width={200} alt="logo" />
+            <Image src="/new-logo.png" height={200} width={200} alt="logo" />
             <p className="font-nunito text-md font-semibold mt-4 text-slate-500">
               We are a new-age Fin-Tech platform which aims to foster financial
               inclusion by leveraging technology to support borrowers with
@@ -57,6 +57,9 @@ export default function Footer() {
           <div>
             <h2 className="font-bold text-sm">RETAIL CUSTOMER CARE HELP</h2>
             <p className="text-sm mt-1 flex flex-col gap-1">
+              <span className="flex items-center gap-2">
+                <FiPhone /> +91 78297 12159
+              </span>
               <span className="flex items-center gap-2">
                 <FiPhone /> +91 78297 12159
               </span>

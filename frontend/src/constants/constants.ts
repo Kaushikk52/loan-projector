@@ -171,4 +171,6 @@ export const servicesData = [
   { name: "Home / Mortgage Loan", path: "/home-loan" },
   { name: "Used car Loan", path: "/car-loan" },
   { name: "Shopping Loan", path: "/shopping-loan" },
+  { name: "Education Loan", path: "/education-loan" },
+  { name: "Credit Card", path: "/credit-card" },
 ];

@@ -45,8 +45,9 @@ export default function ApplyNow({
       return toast.error("Enter a valid loan amount.");
     if (!formData.address.trim())
       return toast.error("Please enter your address.");
-    if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test(formData.panNumber))
-      return toast.error("Enter a valid PAN number.");
+    if (formData.panNumber.length !== 10) {
+      return toast.error("PAN number must be exactly 10 characters.");
+    }
     if (!/^\d+$/.test(formData.salary))
       return toast.error("Enter a valid monthly salary.");
 
