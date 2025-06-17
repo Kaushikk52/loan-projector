@@ -93,7 +93,7 @@ export default function CreditCard() {
   return (
     <div>
       <LoanPagesComponent
-        title="Creadit card loan"
+        title="Credit card loan"
         imgSrc="/credit-card-img.png"
         desc="Discover the Perfect Credit Card for Your Journey
 Empower your financial freedom with our range of credit cards, crafted for students, professionals, and dreamers alike. Whether you’re funding study expenses, traveling abroad, or building your credit, we have a card that fits your lifestyle.

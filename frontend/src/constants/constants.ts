@@ -1,7 +1,9 @@
 import {
+  FaCreditCard,
   FaHandHoldingUsd,
   FaRegAddressCard,
   FaRegCheckSquare,
+  FaUserGraduate,
   FaUserTie,
 } from "react-icons/fa";
 import { GiAmbulance, GiFamilyHouse } from "react-icons/gi";
@@ -59,7 +61,7 @@ export const loanCardsData = [
     theme: "purple",
     icon: GiFamilyHouse,
     description:
-      "Get a loan for your dream house and mortagage for your current home.",
+      "Get a loan for your dream house and mortgage your current home with minimal hassle.",
     path: "/home-loan",
   },
   {
@@ -77,6 +79,22 @@ export const loanCardsData = [
     description:
       "Shop without financial stress using our loan options that give you the freedom to buy what you need.",
     path: "/shopping-loan",
+  },
+  {
+    label: "Education Loans",
+    theme: "blue",
+    icon: FaUserGraduate,
+    description:
+      "Finance your academic journey with low-interest education loans tailored for students and professionals.",
+    path: "/education-loan",
+  },
+  {
+    label: "Credit Card",
+    theme: "green",
+    icon: FaCreditCard,
+    description:
+      "Access instant credit with flexible repayment and rewards through our range of secure credit card options.",
+    path: "/credit-card-loan",
   },
 ];
 
@@ -155,6 +173,10 @@ export const heroImageData = [
   "/hero-img-1.jpeg",
   "/hero-img-2.jpg",
   "/hero-img-3.jpeg",
+  "/hero-img-4.jpeg",
+  "/hero-img-5.jpeg",
+  "/hero-img-6.jpeg",
+  "/hero-img-7.jpeg",
 ];
 
 export const footerLinksLabel = [

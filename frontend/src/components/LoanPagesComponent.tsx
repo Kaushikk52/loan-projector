@@ -205,7 +205,11 @@ export default function LoanPagesComponent({
           </div>
 
           <div
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            style={{
+              scrollbarWidth: "none", // Firefox
+              msOverflowStyle: "none", // IE 10+
+            }}
+            className={`transition-all duration-500 ease-in-out overflow-y-scroll ${
               isDocumentOpen
                 ? "max-h-[1000px] opacity-100 scale-100"
                 : "max-h-0 opacity-0 scale-95"

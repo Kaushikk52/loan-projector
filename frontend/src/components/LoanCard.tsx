@@ -29,7 +29,7 @@ const LoanCard = ({ label, theme, icon: Icon, description }: LoanCardProps) => {
         className="w-60 h-16 rounded-full flex items-center justify-center"
         initial={{ y: 0 }}
         animate={{
-          y: isHovered ? -100 : 0,
+          y: isHovered ? -110 : 0,
           scale: isHovered ? 1.2 : 1,
         }}
         transition={{

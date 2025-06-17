@@ -23,7 +23,7 @@ export default function HeroComponent() {
                 src={src}
                 fill
                 alt={`hero-image-1`}
-                className="object-center"
+                className="object-top"
               />
             </div>
           </SwiperSlide>
