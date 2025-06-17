@@ -1,6 +1,7 @@
 import { footerLinksLabel, servicesData } from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { FaLinkedin } from "react-icons/fa";
 import {
   FaFacebookF,
   FaXTwitter,
@@ -61,7 +62,7 @@ export default function Footer() {
                 <FiPhone /> +91 78297 12159
               </span>
               <span className="flex items-center gap-2">
-                <FiPhone /> +91 78297 12159
+                <FiPhone /> +91 8850-215272
               </span>
               <span className="flex items-center gap-2">
                 <FiMail /> info@loanprojector.com
@@ -89,6 +90,12 @@ export default function Footer() {
               target="_blank"
             >
               <FaInstagram className="text-xl hover:text-pink-400 cursor-pointer" />
+            </Link>
+            <Link
+              href={"https://www.linkedin.com/company/loanprojector/"}
+              target="_blank"
+            >
+              <FaLinkedin className="text-xl hover:text-blue-400 cursor-pointer" />
             </Link>
             <FaYoutube className="text-xl hover:text-red-500 cursor-pointer" />
           </div>
