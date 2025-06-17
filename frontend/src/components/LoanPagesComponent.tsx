@@ -12,6 +12,16 @@ type req = {
   title: string;
 };
 
+type dReqType = {
+  title: string;
+  desc: string;
+};
+
+type dDocsType = {
+  title: string;
+  points: string[];
+};
+
 type LoanPagesComponentProps = {
   title: string;
   desc: string;
@@ -21,6 +31,10 @@ type LoanPagesComponentProps = {
   req?: req[];
   isBusinessLoan?: boolean;
   isPayday?: boolean;
+  isDynamicRequirement?: boolean;
+  dynamicRequirement?: dReqType[];
+  isDynamicDocs?: boolean;
+  dynamicDocs?: dDocsType[];
 };
 
 export default function LoanPagesComponent({
@@ -32,6 +46,10 @@ export default function LoanPagesComponent({
   req,
   isBusinessLoan,
   isPayday,
+  isDynamicRequirement,
+  dynamicRequirement,
+  dynamicDocs,
+  isDynamicDocs,
 }: LoanPagesComponentProps) {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
@@ -133,25 +151,36 @@ export default function LoanPagesComponent({
               </div>
 
               {/* Right Column: Points */}
-              <div className="flex flex-col gap-4 text-gray-700">
-                <p>
-                  ✓ <span className="font-bold">Age:</span> must be above 21 and
-                  up to 60 years.
-                </p>
-                <p>
-                  ✓ <span className="font-bold">Citizenship:</span> Indian.
-                </p>
-                <p>
-                  ✓ <span className="font-bold">Documents:</span> Documents
-                  {documents
-                    ? documents
-                    : " required are PAN, Aadhar, Salary Slip, Bank Statement, Utility Bills, Rent Agreements, etc"}
-                </p>
-                <p>
-                  ✓ <span className="font-bold">Income:</span> The per month
-                  income should be at least 20,000.
-                </p>
-              </div>
+              {isDynamicRequirement ? (
+                <div className="flex flex-col gap-4 text-gray-700">
+                  {dynamicRequirement?.map((data) => (
+                    <p key={data.desc}>
+                      ✓ <span className="font-bold">{data.title}:</span>{" "}
+                      {data.desc}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-4 text-gray-700">
+                  <p>
+                    ✓ <span className="font-bold">Age:</span> must be above 21
+                    and up to 60 years.
+                  </p>
+                  <p>
+                    ✓ <span className="font-bold">Citizenship:</span> Indian.
+                  </p>
+                  <p>
+                    ✓ <span className="font-bold">Documents:</span> Documents
+                    {documents
+                      ? documents
+                      : " required are PAN, Aadhar, Salary Slip, Bank Statement, Utility Bills, Rent Agreements, etc"}
+                  </p>
+                  <p>
+                    ✓ <span className="font-bold">Income:</span> The per month
+                    income should be at least 20,000.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -188,37 +217,52 @@ export default function LoanPagesComponent({
                   Submit just a few essential documents:
                 </h2>
               </div>
-              <div className="flex flex-col gap-4 text-gray-700">
-                <p>
-                  ✓ <span className="font-bold">Aadhar Card</span>
-                </p>
-                <p>
-                  ✓ <span className="font-bold">PAN Card</span>
-                </p>
-                <p>
-                  ✓ <span className="font-bold">Salary Slip</span> (for salaried
-                  Person)
-                </p>
-                <p>
-                  ✓ <span className="font-bold">Bank Statement</span>
-                </p>
-                <p>
-                  ✓{" "}
-                  <span className="font-bold">
-                    {isBusinessLoan ? "Latest Two Years ITR" : "ITR"}
-                  </span>{" "}
-                  (for self-employed)
-                </p>
-                <p>
-                  ✓ <span className="font-bold">Utility bills</span> like
-                  electricity Bills, Gas Bills, telephone bills, etc.
-                </p>
-                {req?.map((req, index) => (
-                  <p key={index}>
-                    ✓ <span className="font-bold">{req.title}</span>
+              {isDynamicDocs ? (
+                <div className="flex flex-col gap-4 text-gray-700">
+                  {dynamicDocs?.map((data) => (
+                    <div key={data.title}>
+                      ✓ <span className="font-bold">{data.title}</span>
+                      {data.points.map((point) => (
+                        <div key={point} className="pl-5">
+                          - <span>{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-4 text-gray-700">
+                  <p>
+                    ✓ <span className="font-bold">Aadhar Card</span>
                   </p>
-                ))}
-              </div>
+                  <p>
+                    ✓ <span className="font-bold">PAN Card</span>
+                  </p>
+                  <p>
+                    ✓ <span className="font-bold">Salary Slip</span> (for
+                    salaried Person)
+                  </p>
+                  <p>
+                    ✓ <span className="font-bold">Bank Statement</span>
+                  </p>
+                  <p>
+                    ✓{" "}
+                    <span className="font-bold">
+                      {isBusinessLoan ? "Latest Two Years ITR" : "ITR"}
+                    </span>{" "}
+                    (for self-employed)
+                  </p>
+                  <p>
+                    ✓ <span className="font-bold">Utility bills</span> like
+                    electricity Bills, Gas Bills, telephone bills, etc.
+                  </p>
+                  {req?.map((req, index) => (
+                    <p key={index}>
+                      ✓ <span className="font-bold">{req.title}</span>
+                    </p>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

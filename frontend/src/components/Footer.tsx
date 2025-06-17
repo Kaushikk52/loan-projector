@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h2 className="font-nunito text-xl font-bold mb-5">Services</h2>
-            {servicesData.slice(0, 7).map((service) => (
+            {servicesData.map((service) => (
               <Link href={service.path} key={service.name}>
                 <p className="font-nunito text-md font-semibold mt-3 text-slate-500">
                   {service.name}
