@@ -44,7 +44,7 @@ export default function Home() {
         </div>
 
         {/* Journey + Short-Term Loans Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 flex flex-col gap-32 lg:gap-52">
+        <div className="w-full max-w-7xl mx-auto px-4 flex flex-col gap-32 lg:gap-20">
           {/* OUR JOURNEY */}
           <div className="flex flex-col gap-10 items-center">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-600 to-indigo-800">
@@ -74,8 +74,12 @@ export default function Home() {
           </div>
 
           {/* SHORT-TERM LOANS */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
-            <div className="flex justify-center items-center" ref={loanCalcRef}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-10">
+            {/* Loan Calculator Column */}
+            <div
+              className="flex justify-center items-center h-full"
+              ref={loanCalcRef}
+            >
               <LoanCalculator
                 minLoanAmount={5000}
                 maxLoanAmount={100000}
@@ -87,8 +91,9 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex flex-col items-center lg:items-start justify-center gap-2 md:gap-5">
-              <div className="flex flex-col gap-2 mb-4 text-start text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-600 to-indigo-800">
+            {/* Text Section */}
+            <div className="flex flex-col items-center lg:items-start justify-center gap-2 md:gap-5 h-full">
+              <div className="flex flex-col gap-2 mb-4 text-start text-lg sm:text-xl md:text-2xl lg:text-4xl font-extrabold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-600 to-indigo-800">
                 <h1 className="">SHORT-TERM LOANS FOR ANY</h1>
                 <h1>FINANCIAL REQUIREMENTS</h1>
               </div>

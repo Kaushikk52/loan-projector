@@ -62,7 +62,7 @@ export default function LoanPagesComponent({
 
   return (
     <div className="flex flex-col gap-10">
-      <div className="flex flex-col items-center gap-20  max-w-6xl mx-auto">
+      <div className="flex flex-col items-center gap-10  max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center mt-10 gap-10 lg:gap-20 px-2">
           <div>
             <Image

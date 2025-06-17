@@ -3,8 +3,8 @@ import { aboutUsImpactData } from "@/constants/constants";
 export default function AboutPage() {
   return (
     <div className="flex flex-col gap-20">
-      <div className="bg-slate-100 w-full py-10">
-        <div className="flex flex-col items-center justify-center gap-5 mx-auto max-w-4xl text-center mt-10">
+      <div className="bg-slate-100 w-full py-10 md:py-20">
+        <div className="flex flex-col items-center justify-center gap-5 mx-auto max-w-4xl text-center">
           <h1 className="text-xl lg:text-4xl font-nunito font-bold text-blue-800">
             ABOUT THE COMPANY
           </h1>

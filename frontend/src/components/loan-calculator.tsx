@@ -48,7 +48,7 @@ export default function LoanCalculator(props: LoanCalculatorProps) {
 
       totalPaymentValue = loanAmount + totalInterest;
 
-      emiValue = totalPaymentValue / tenure;
+      emiValue = loanAmount * dailyInterestRate;
     } else {
       const monthlyInterestRate = interestRate / 100 / 12;
       const totalMonths = tenure * 12;

@@ -16,7 +16,7 @@ const WhyChooseUs = ({ title, isHomeLoan, isPayday }: WhyChooseUsProps) => {
     <div className="min-h-fit bg-gray-50 p-8 w-full py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Centered Heading */}
-        <h2 className="text-center text-3xl lg:text-4xl font-bold text-blue-800 font-nunito mb-8">
+        <h2 className="text-center text-3xl lg:text-4xl font-bold text-blue-800 font-nunito mb-16">
           Why choose Loan Projector for {title} ?
         </h2>
 
