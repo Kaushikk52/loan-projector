@@ -66,7 +66,7 @@ export default function ApplyNow({
       };
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbz6suey8m7VosEeoQ4FPOlgPsKlGIIVpqWwXImQ0W-ROwhBrMmf6JMV2CL6l283iQ0z/exec",
+        "https://script.google.com/macros/s/AKfycby51AgYZxIRhbk93-P2SeopqNhWEAIKdCiQFkPmuhDH7BoFPeMZ_QtAXQ82ZKDuhXS8/exec",
         {
           method: "POST",
           mode: "no-cors",

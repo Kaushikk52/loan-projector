@@ -35,7 +35,7 @@ export default function RepayLoan({ openRepay, setOpenRepay }: RepayLoanProps) {
       };
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbx3h83M4g7pCKLMb98gm8g2adkYA-KX5uo9MAR5GAa-16WP3FnCdWkzTK7tZQOClQG6/exec",
+        "https://script.google.com/macros/s/AKfycbxuFRP2UOymLqfc0evw1luG59zcb9qDmuXGbKRS3OFCg9oSs7Zj9uOFfaH-mpuWPh0wsg/exec",
         {
           method: "POST",
           mode: "no-cors",

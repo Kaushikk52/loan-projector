@@ -36,7 +36,7 @@ export default function NavBar() {
   return (
     <div className="flex items-center justify-between p-4 md:px-8 md:py-2 shadow-lg relative z-50">
       <Link href={"/"}>
-        <div className="relative h-[100px] w-[200px] md:w-[300px] md:h-[150px]">
+        <div className="relative h-[60px] w-[120px] md:w-[300px] md:h-[150px]">
           <Image src={"/new-logo.png"} fill alt="logo" className="absolute" />
         </div>
       </Link>
@@ -128,14 +128,14 @@ export default function NavBar() {
         </div>
         <div
           onClick={handleApplyNow}
-          className="bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-2 px-3 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg"
+          className="bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-1 px-2 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg"
         >
           <h1 className="text-md font-nunito flex items-center gap-2">
             Apply <span className="hidden md:block">Now</span>
           </h1>
         </div>
         <button
-          className="flex items-center gap-2 bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-2 px-3 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg"
+          className="flex items-center gap-2 bg-blue-500 text-base font-semibold font-nunito md:text-[14px] py-1 px-2 md:px-4 md:py-2 text-white cursor-pointer hover:bg-blue-700 transition duration-300 rounded-lg"
           onClick={scrollToRef}
         >
           <span className="hidden md:block">EMI</span> Calculator
