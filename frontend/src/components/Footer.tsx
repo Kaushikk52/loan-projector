@@ -47,7 +47,7 @@ export default function Footer() {
 
         {/* Right Section */}
         <div className="xl:col-span-3 flex flex-col space-y-5 h-9/12">
-          <h2 className="font-nunito text-xl font-bold mb-5">
+          <h2 className="font-nunito text-xl font-bold mb-2">
             Connect with us
           </h2>
           <div>

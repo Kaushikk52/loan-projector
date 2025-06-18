@@ -35,7 +35,7 @@ export default function RepayLoan({ openRepay, setOpenRepay }: RepayLoanProps) {
       };
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbxFZOVYw_szidYQ41U8xCtp07Sol_zG8BdLaRhhefPOzHS-qvF4xquFo_dm0KsSsrbz/exec",
+        "https://script.google.com/macros/s/AKfycbx3h83M4g7pCKLMb98gm8g2adkYA-KX5uo9MAR5GAa-16WP3FnCdWkzTK7tZQOClQG6/exec",
         {
           method: "POST",
           mode: "no-cors",
@@ -65,7 +65,7 @@ export default function RepayLoan({ openRepay, setOpenRepay }: RepayLoanProps) {
       buttonText={isSubmitting ? "Submitting..." : "Submit Form"}
       onSubmit={handleSubmit}
     >
-      <form className="flex flex-col gap-4 px-2 pb-4">
+      <div className="flex flex-col gap-4 px-2 pb-4">
         <input
           type="text"
           name="name"
@@ -84,7 +84,7 @@ export default function RepayLoan({ openRepay, setOpenRepay }: RepayLoanProps) {
           required
           className="p-2 border rounded-md"
         />
-      </form>
+      </div>
     </CustomDialog>
   );
 }

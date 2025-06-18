@@ -66,7 +66,7 @@ export default function ApplyNow({
       };
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbwehMimGa5-RfP9VoU6DLoas1-0RxTXRu9MzYqbfOqwdvGc9uqUtitu0pV0joA4gyy4VQ/exec",
+        "https://script.google.com/macros/s/AKfycbz6suey8m7VosEeoQ4FPOlgPsKlGIIVpqWwXImQ0W-ROwhBrMmf6JMV2CL6l283iQ0z/exec",
         {
           method: "POST",
           mode: "no-cors",
@@ -110,7 +110,7 @@ export default function ApplyNow({
       buttonText={isSubmitting ? "Submitting..." : "Submit Form"}
       onSubmit={handleSubmit}
     >
-      <form className="flex flex-col gap-4 px-2 pb-4">
+      <div className="flex flex-col gap-4 px-2 pb-4">
         <input
           type="text"
           name="name"
@@ -187,7 +187,7 @@ export default function ApplyNow({
           required
           className="p-2 border rounded-md"
         />
-      </form>
+      </div>
     </CustomDialog>
   );
 }
